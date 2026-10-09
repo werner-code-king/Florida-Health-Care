@@ -1,0 +1,3273 @@
+(function(){
+"use strict";
+var SEED_PROVIDERS = [
+  {
+    "id": "h1",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Ryan Chizner, DO",
+    "phone": "(772) 286-9400",
+    "website": null,
+    "address": "11380 SW Village Pkwy, Suite 300, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": null,
+    "rating": {
+      "value": 4.9,
+      "count": 220
+    },
+    "ratingSource": "rater8",
+    "sources": [
+      {
+        "type": "rater8",
+        "url": "https://reviews.rater8.com/florida-cardiovascular-partners-1397"
+      },
+      {
+        "type": "rater8",
+        "url": "https://reviews.rater8.com/doctor/dr-ryan-chizner-do-a925517f"
+      },
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-ryan-chizner-1548529662"
+      }
+    ],
+    "note": "A separate Healthline listing shows 5.0 with no review count disclosed; Cleveland Clinic also lists him at a Stuart, FL office for the same practice group.",
+    "desc": "Cardiologist (DO), roughly 14 years of experience per directory listing; practices cardiology at Stuart Cardiology Group / Florida Cardiovascular Partners.",
+    "pending": false
+  },
+  {
+    "id": "h2",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Norman E. Bennett, MD, FACC",
+    "phone": "(772) 286-9400",
+    "website": null,
+    "address": "11380 SW Village Pkwy, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health (Martin North & Martin South Hospitals, Tradition Hospital)",
+    "rating": {
+      "value": 4.8,
+      "count": 150
+    },
+    "ratingSource": "rater8",
+    "sources": [
+      {
+        "type": "rater8",
+        "url": "https://reviews.rater8.com/florida-cardiovascular-partners-1397"
+      },
+      {
+        "type": "rater8",
+        "url": "https://reviews.rater8.com/doctor/dr-norman-bennett-md-b17ca535"
+      },
+      {
+        "type": "WellMed directory",
+        "url": "https://doctors.wellmedhealthcare.com/locations/details/11483"
+      }
+    ],
+    "note": "Phone number unconfirmed directly with the office; an older Stuart, FL address also appears in some directories and may be outdated.",
+    "desc": "Board certified in Cardiovascular Disease (American Board of Internal Medicine) per listing; affiliated with Cleveland Clinic Florida and Martin North/South and Tradition hospitals; 30+ years of experience stated.",
+    "pending": false
+  },
+  {
+    "id": "h3",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "Darron Lewis, MD",
+    "phone": "(772) 335-9600",
+    "website": "https://www.hcafloridaphysicians.com/physicians/profile/Dr-Darron-Lewis-MD",
+    "address": "1881 SE Tiffany Ave, Suite 306, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": {
+      "value": 4.7,
+      "count": 38
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "HCA Florida Healthcare",
+        "url": "https://www.hcafloridaphysicians.com/physicians/profile/Dr-Darron-Lewis-MD"
+      },
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-darron-lewis-1962505206"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Coronary%20Artery%20Spasm/5724/doctors/darron-lewis/8009960"
+      }
+    ],
+    "note": "Suite number conflicts between HCA's own site (306) and Healthline (303); older listings show a different Hillmoor Dr address that may be stale.",
+    "desc": "Board-certified, fellowship-trained interventional cardiologist per HCA profile; 23 years of experience per Healthline; treats acute coronary syndrome at HCA Florida St. Lucie Medical Specialists.",
+    "pending": false
+  },
+  {
+    "id": "h4",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "Kamalakar Takkellapa Rao, MD",
+    "phone": "(772) 465-4499",
+    "website": null,
+    "address": "1801 SE Hillmoor Dr, Suite C-201, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/florida-heart-center-9fb530c8-4703-e211-a42b-001f29e3eb44-overview"
+      },
+      {
+        "type": "WellMed directory",
+        "url": "https://doctors.wellmedhealthcare.com/locations/details/4839"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/High%20Cholesterol/2587/doctors/location/US/FL/Port%20St%20Lucie"
+      }
+    ],
+    "note": "WebMD shows 15 reviews for his listing but no visible star score; MediFind's \"Advanced\" tier for hypertension treatment is MediFind's own ranking system, not a patient rating.",
+    "desc": "Cardiologist at Florida Heart Center, PA; currently accepting new patients per MediFind.",
+    "pending": false
+  },
+  {
+    "id": "h5",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "Joseph S. Gage, MD, FACC",
+    "phone": null,
+    "website": null,
+    "address": "service area: SW Village Pkwy, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Vitals",
+        "url": "https://www.vitals.com/cardiovascular-disease/fl/lauderdale"
+      },
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/cardiologists-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Only a qualitative Vitals patient comment (\"thorough\") was found, no numeric rating. His office address overlaps with the Bennett/Chizner Stuart Cardiology Group location, so current exact office is uncertain.",
+    "desc": "Cardiologist with 44 years of experience listed; accepting new patients; offers telehealth per directory summary.",
+    "pending": false
+  },
+  {
+    "id": "h6",
+    "category": "cardiology",
+    "specialty": "Cardiology",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "Vaughn Payne, MD",
+    "phone": null,
+    "website": null,
+    "address": "SE Hillmoor Dr, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Sharecare",
+        "url": "https://providers.sharecare.com/doctor/dr-vaughn-w-payne"
+      }
+    ],
+    "note": "Lowest-confidence entry in this category \u2014 exact address/phone not fully confirmed; Sharecare links to Healthgrades reviews but no value was visible in search results.",
+    "desc": "Cardiologist at Healthy Heart Center Inc.; 40 years of experience per directory listing.",
+    "pending": false
+  },
+  {
+    "id": "h7",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Carlos Romero-Marrero, MD",
+    "phone": "(772) 419-4266",
+    "website": "https://providers.clevelandclinic.org/provider/carlos-romero-marrero/4269333",
+    "address": "Tradition HealthPark Two, 10080 SW Innovation Way, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": {
+      "value": 4.9,
+      "count": 363
+    },
+    "ratingSource": "Cleveland Clinic",
+    "sources": [
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/provider/carlos-romero-marrero/4269333"
+      },
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-carlos-romero-marrero-1194936757"
+      },
+      {
+        "type": "source",
+        "url": "https://www.browardhealth.org/find-a-doctor/profile/carlos-romero-marrero/643254"
+      }
+    ],
+    "note": "Rating is Cleveland Clinic's own provider-rating system, not Google. A separate Medical News Today listing shows no reviews yet; the Cleveland Clinic figure is used as primary given its far larger sample.",
+    "desc": "Head of the Liver Center at Cleveland Clinic Martin Health per profile; completed GI fellowship at University of Puerto Rico and an advanced liver-transplant fellowship at Mayo Clinic Rochester; 17 years of experience; speaks English and Spanish; offers telehealth.",
+    "pending": false
+  },
+  {
+    "id": "h8",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Steven Kappler, MD",
+    "phone": "(772) 398-1800",
+    "website": "https://providers.clevelandclinic.org/provider/steven-kappler/4269247",
+    "address": "Tradition HealthPark Two, 10080 SW Innovation Way, Suite 201, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": {
+      "value": 5.0,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-steven-kappler-1265490163"
+      },
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/provider/steven-kappler/4269247"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Crohn's%20Disease/1420/doctors/steven-kappler/12012199"
+      }
+    ],
+    "note": "No review count was shown for the 5.0 figure, so ranked below Romero-Marrero's larger, better-documented sample despite the higher number.",
+    "desc": "Board certified in Gastroenterology (American Board of Internal Medicine, 2010) per Cleveland Clinic profile; 22 years of experience per Healthline; treats ulcerative colitis and Crohn's disease; offers telehealth.",
+    "pending": false
+  },
+  {
+    "id": "h9",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "Scott Altschuler, MD",
+    "phone": "(772) 777-2575",
+    "website": null,
+    "address": "1701 SE Hillmoor Dr, Suite 4, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "Cleveland Clinic Martin North Hospital; HCA Florida St. Lucie Hospital",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://resumonk.com/EmlrX709qKJxFsriAsB1xw"
+      },
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/gastroenterologists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "source",
+        "url": "https://www.beckersasc.com/?p=48060"
+      }
+    ],
+    "note": "No numeric rating found despite checking multiple directories; ranked by credentials/tenure instead. Sources disagree on the practice's founding year (2010/2011/2017 variously cited).",
+    "desc": "Managing physician of Treasure Coast GI; completed a gastroenterology/hepatology fellowship at University of Virginia (chief fellow); graduated Boston University medical school; affiliated with Cleveland Clinic Martin North Hospital and HCA Florida St. Lucie Hospital; focus includes colon cancer screening, colonoscopy, endoscopy, GERD.",
+    "pending": false
+  },
+  {
+    "id": "h10",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "Joseph Katta, MD",
+    "phone": null,
+    "website": null,
+    "address": "1700 SE Hillmoor Dr, Suite 402, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": "WebMD",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/joseph-katta-md"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/joseph-j-katta-md-pa-3321fbf2-fd52-e311-befc-001f29e3eb44"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Gastritis/2150/doctors/location/US/FL/Port%20St%20Lucie"
+      }
+    ],
+    "note": "WebMD shows only 1 review for the Port St. Lucie office \u2014 not a representative sample. One review (June 2025) raised a follow-up-care concern after a colonoscopy; flagged, not excluded. A second address in one directory could not be reconciled.",
+    "desc": "Board certified in Internal Medicine and Gastroenterology per Zocdoc listing; accepting new patients per MediFind.",
+    "pending": false
+  },
+  {
+    "id": "h11",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "Edwin Flanagan, DO",
+    "phone": "(772) 398-1800",
+    "website": null,
+    "address": "1651 SE Tiffany Ave, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 2.0,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-edwin-flanagan-1043239866"
+      },
+      {
+        "type": "source",
+        "url": "https://www.stedi.com/site/npi-registry/npis/1043239866"
+      }
+    ],
+    "note": "Low rating is based on a small, undisclosed review count per the directory summary ('a few reviews') \u2014 weighted down accordingly rather than excluded.",
+    "desc": "Gastroenterologist with 40 years of experience per Healthline listing.",
+    "pending": false
+  },
+  {
+    "id": "h12",
+    "category": "gastroenterology",
+    "specialty": "Gastroenterology",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "Khiem D. Nguyen, MD",
+    "phone": null,
+    "website": null,
+    "address": "1822 SE Port St. Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 1.0,
+      "count": 2
+    },
+    "ratingSource": "Medical News Today",
+    "sources": [
+      {
+        "type": "Healthgrades",
+        "url": "https://www.healthgrades.com/physician/dr-khiem-nguyen-xf3b2/background-check"
+      },
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-khiem-nguyen-1316922511"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Gastroparesis/5833/doctors/location/US/FL/Port%20St%20Lucie"
+      }
+    ],
+    "note": "Ranked last \u2014 rating is only 2 reviews at 1.0, too small a sample to be meaningful but the lowest signal found. A same-named physician also appears to practice in PA/NY; it could not be confirmed whether this is the same person, so current Florida practice status is unverified.",
+    "desc": "Offers telehealth; speaks English, French, and Vietnamese per Healthgrades listing.",
+    "pending": false
+  },
+  {
+    "id": "h13",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 1,
+    "groupSize": 9,
+    "name": "Lucie Dental (Dr. Scott Azari / Dr. Kevin Luba, DMD)",
+    "phone": "(772) 348-4409",
+    "website": "https://www.luciedental.com/",
+    "address": "1449 NW St Lucie West Blvd, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 4.9,
+      "count": 1044
+    },
+    "ratingSource": "Google",
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://lantern.llc/b/lucie-dental-port-st-lucie/book"
+      },
+      {
+        "type": "source",
+        "url": "https://local.newpatientsinc.com/dental/dr-kevin-luba-dmd-port-st-lucie-fl"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.luciedental.com/"
+      }
+    ],
+    "note": "Two directory snapshots disagree slightly on exact rating (4.9 vs 5.0) and review count (1044 vs 1082); address/phone also vary slightly between third-party directories.",
+    "desc": "General and cosmetic dental practice offering same-day crowns, dental implants/All-on-X, Invisalign, root canals and full-mouth reconstruction, per its own site and directory listings.",
+    "pending": false
+  },
+  {
+    "id": "h14",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 2,
+    "groupSize": 9,
+    "name": "St. Lucie Center for Cosmetic Dentistry (Dr. Hans Almanzar / Dr. Elizabeth Rife)",
+    "phone": null,
+    "website": null,
+    "address": "139 SW Port St. Lucie Blvd, Port St. Lucie, FL 34984",
+    "zip": "34984",
+    "hospital": null,
+    "rating": {
+      "value": 4.9,
+      "count": 544
+    },
+    "ratingSource": "Google",
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://business.google.com/v/st-lucie-center-for-cosmetic-dentistry/02866556623246590554/84ff/_"
+      },
+      {
+        "type": "source",
+        "url": "https://www.bestprosintown.com/fl/port-st.-lucie/st-lucie-center-for-cosmetic-dentistry-"
+      }
+    ],
+    "note": "A separate Zocdoc listing for Dr. Almanzar individually (same address) shows 4.62 over 39 reviews \u2014 lower than the practice-level Google figure; included for context.",
+    "desc": "Cosmetic/general dentistry practice; reviewers in snippets praised staff and dentists, including Dr. Almanzar described as 'incredibly kind and patient.'",
+    "pending": false
+  },
+  {
+    "id": "h15",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 3,
+    "groupSize": 9,
+    "name": "Sage Dental of Port St. Lucie (Dr. Janely Pi\u00f1ero, DDS)",
+    "phone": "(772) 337-8600",
+    "website": "https://mysagedental.com/port-st-lucie",
+    "address": "1722 SW St. Lucie West Blvd, Suite 302, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 4.79,
+      "count": 19
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://book.zocdoc.com/get-started/dentists/port-st-lucie-244043pm"
+      },
+      {
+        "type": "source",
+        "url": "https://mysagedental.com/dentists/janely-pinero-dds/"
+      },
+      {
+        "type": "source",
+        "url": "https://mysagedental.com/port-st-lucie"
+      }
+    ],
+    "note": "Low review count (19) relative to other listings \u2014 downweighted in ranking despite the high score.",
+    "desc": "General dentist; patients described visiting for consultations, wisdom-tooth issues and extractions. Accepts Aetna, BlueCross BlueShield, Cigna and 30+ other plans per Zocdoc.",
+    "pending": false
+  },
+  {
+    "id": "h16",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 4,
+    "groupSize": 9,
+    "name": "Dr. Dounia Yazji",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 4.6,
+      "count": 172
+    },
+    "ratingSource": "Google",
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://local.newpatientsinc.com/dental/dr-dounia-yazji-port-saint-lucie-fl"
+      }
+    ],
+    "note": "Only found via one directory snapshot; exact street address and independent confirmation not located.",
+    "desc": "General dentist practicing in Port St. Lucie; directory profile only, specialty details limited.",
+    "pending": false
+  },
+  {
+    "id": "h17",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 5,
+    "groupSize": 9,
+    "name": "Dr. Merna Baselious",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 4.4,
+      "count": 665
+    },
+    "ratingSource": "Google",
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://local.newpatientsinc.com/dental/dr-merna-baselious-port-st-lucie-fl"
+      }
+    ],
+    "note": "High review count but a lower average than several higher-ranked listings; ranked below Yazji on a rating-weighted basis despite more reviews.",
+    "desc": "General dentist practicing in Port St. Lucie; directory profile only.",
+    "pending": false
+  },
+  {
+    "id": "h18",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 6,
+    "groupSize": 9,
+    "name": "Gentle Breeze Dental",
+    "phone": "(772) 335-0993",
+    "website": "https://gentlebreezedental.com",
+    "address": "1761 SE Port St. Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/gentle-breeze-dental-57d18db6-8212-4f8c-9c51-8d0a13c016b2"
+      },
+      {
+        "type": "source",
+        "url": "https://local.newpatientsinc.com/dental/gentle-breeze-dental"
+      }
+    ],
+    "note": "WebMD lists 176 reviews with positive comments (praised for easing dental anxiety) but no aggregate star score appeared in search snippets; one source indicates the practice may not be accepting new patients \u2014 confirm directly.",
+    "desc": "General dental practice; patient comments describe friendly staff and an anxiety-easing approach.",
+    "pending": false
+  },
+  {
+    "id": "h19",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 7,
+    "groupSize": 9,
+    "name": "The Florida Dentists",
+    "phone": null,
+    "website": null,
+    "address": "10692 S US Highway 1, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/the-florida-dentists-c892dfab-4961-4441-896b-c457fa18d0f0/"
+      }
+    ],
+    "note": "WebMD shows 424 reviews but no star value surfaced in snippets; listing also states the practice may not currently be accepting new patients \u2014 confirm before referral.",
+    "desc": "Reviewers describe a conservative treatment approach and willingness to answer questions (per a WebMD snippet dated roughly 2020).",
+    "pending": false
+  },
+  {
+    "id": "h20",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 8,
+    "groupSize": 9,
+    "name": "Southport Dental Care (Dr. Michael Cook)",
+    "phone": "(772) 335-3300",
+    "website": null,
+    "address": "10690 S US Highway 1, Suite A, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/local-dentists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/southport-dental-care-bf507dcd-867d-4085-8540-5e6e83711696/physicians"
+      }
+    ],
+    "note": "Three Best Rated 'top pick' uses its own proprietary methodology, not an independent star rating; one directory flags the practice as possibly not accepting new patients (unverified/possibly stale).",
+    "desc": "General, cosmetic, implant and orthodontic dentistry; operating since 1989 per Three Best Rated profile.",
+    "pending": false
+  },
+  {
+    "id": "h21",
+    "category": "dentistry",
+    "specialty": "Dentistry",
+    "rank": 9,
+    "groupSize": 9,
+    "name": "Tradition Dental Group (Dr. Patrick Williams)",
+    "phone": null,
+    "website": null,
+    "address": "SW Savage Blvd, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/local-dentists-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Sourced from only one directory listing; thin information \u2014 include with caution; exact street number not found.",
+    "desc": "Focus on implants, crowns, bridges and dentures per Three Best Rated listing.",
+    "pending": false
+  },
+  {
+    "id": "h22",
+    "category": "ent",
+    "specialty": "ENT / Otolaryngology",
+    "rank": 1,
+    "groupSize": 5,
+    "name": "Michele L. Richards, MD (Associated Coastal ENT)",
+    "phone": null,
+    "website": null,
+    "address": "1731 SW Gatlin Blvd, Port St. Lucie, FL 34953",
+    "zip": "34953",
+    "hospital": "Lawnwood Regional Medical Center",
+    "rating": {
+      "value": 4.6,
+      "count": 12
+    },
+    "ratingSource": "Vitals",
+    "sources": [
+      {
+        "type": "Vitals",
+        "url": "https://www.vitals.com/doctors/Dr_Michele_Richards.html"
+      },
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/ent-doctors-in-port-st-lucie-fl"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/associated-coastal-ent-bb2ecdc1-0f9c-47e0-8c05-fd533cd277ba"
+      }
+    ],
+    "note": "WebMD lists 27 reviews for the practice with no visible star score; Three Best Rated also names her a local top-3 pick (own methodology, not a star rating). Credential claims below are from a directory bio and not independently verified.",
+    "desc": "Per a directory profile, completed a general surgery internship and otolaryngology residency at the University of Florida, and is an assistant clinical professor at the FSU College of Medicine; affiliated with Lawnwood Regional Medical Center. Services include ear tubes, sinus surgery, and sleep apnea surgery.",
+    "pending": false
+  },
+  {
+    "id": "h23",
+    "category": "ent",
+    "specialty": "ENT / Otolaryngology",
+    "rank": 2,
+    "groupSize": 5,
+    "name": "John Lanza, MD (ENT and Allergy Associates of Florida)",
+    "phone": "(772) 398-9911",
+    "website": null,
+    "address": "1801 SE Hillmoor Dr, Suite B-105, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Sharecare",
+    "sources": [
+      {
+        "type": "Sharecare",
+        "url": "https://providers.sharecare.com/doctor/dr-john-lanza"
+      }
+    ],
+    "note": "Rating is based on a single review \u2014 not statistically meaningful; downweighted well below Dr. Richards despite the higher raw score.",
+    "desc": "Practices otolaryngology at ENT and Allergy Associates of Florida's Port St. Lucie office.",
+    "pending": false
+  },
+  {
+    "id": "h24",
+    "category": "ent",
+    "specialty": "ENT / Otolaryngology",
+    "rank": 3,
+    "groupSize": 5,
+    "name": "Matthew Ericksen, DO (ENT and Allergy Associates of Florida)",
+    "phone": "(772) 398-9911",
+    "website": "https://my.officite.com/0074825/matthew-ericksen-d-o",
+    "address": "1801 SE Hillmoor Dr, Suite B-105, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://my.officite.com/0074825/matthew-ericksen-d-o"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/conditions/vocal-cord-dysfunction/6458/doctors/location/US/FL/Port%20Saint%20Lucie"
+      },
+      {
+        "type": "Sharecare",
+        "url": "https://providers.sharecare.com/doctor/dr-matthew-c-ericksen"
+      }
+    ],
+    "note": "No patient-rating score found; MediFind's 'Experienced' tier is its own ranking system, not a patient star rating.",
+    "desc": "Per the practice's own bio, joined in July 2022; states he is board certified by the American Osteopathic Board of Otolaryngology and completed a rhinology fellowship at St. Elizabeth's Hospital, Boston, MA (2016). Sees patients in Port St. Lucie, Fort Pierce, and Okeechobee; focus areas include hearing loss, dizziness/balance disorders, sleep disorders, and chronic sinus disease. Speaks English and Spanish per the bio.",
+    "pending": false
+  },
+  {
+    "id": "h25",
+    "category": "ent",
+    "specialty": "ENT / Otolaryngology",
+    "rank": 4,
+    "groupSize": 5,
+    "name": "Timothy Tudor, DO (ENT and Allergy Associates of Florida)",
+    "phone": "(772) 398-9911",
+    "website": null,
+    "address": "1801 SE Hillmoor Dr, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/ent-doctors-in-port-st-lucie-fl"
+      },
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://my.clevelandclinic.org/staff/109069-timothy-tudor"
+      }
+    ],
+    "note": "No patient-rating score found in search snippets.",
+    "desc": "Listed as an otolaryngologist and plastic surgeon, currently accepting new patients per a directory snippet; listed areas of expertise include familial deafness, infant hearing loss, otitis, and chronic rhinosinusitis with nasal polyps.",
+    "pending": false
+  },
+  {
+    "id": "h26",
+    "category": "ent",
+    "specialty": "ENT / Otolaryngology",
+    "rank": 5,
+    "groupSize": 5,
+    "name": "Allen Reisman (Martin Memorial Physician Corporation)",
+    "phone": null,
+    "website": null,
+    "address": "10000 SW Innovation Way, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": "Martin Memorial / Cleveland Clinic Martin Health",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/conditions/sutton-disease-2/5063/doctors/location/US/FL/Port%20Saint%20Lucie"
+      }
+    ],
+    "note": "MediFind's tier classifications ('Elite'/'Distinguished'/'Experienced') are its own provider classification, not a patient star rating \u2014 none found for this provider.",
+    "desc": "Listed as currently accepting new patients; top listed areas of expertise are tinnitus, infant hearing loss, auditory neuropathy spectrum disorder, and DFNB1 per MediFind profile.",
+    "pending": false
+  },
+  {
+    "id": "h27",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Robert Chua, MD",
+    "phone": "(772) 398-7936",
+    "website": "https://www.hcafloridaphysicians.com/physicians/profile/Dr-Robert-Chua-MD",
+    "address": "1881 SE Tiffany Ave, Suite 102, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "HCA Florida Healthcare",
+        "url": "https://www.hcafloridaphysicians.com/physicians/profile/Dr-Robert-Chua-MD"
+      },
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/primary-care-physicians-in-port-st-lucie-fl"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/doctors/robert-k-chua/12112396"
+      }
+    ],
+    "note": "Featured as a top-3 pick on Three Best Rated (a curated listing, not a star-rating aggregator). Years of experience cited range 20-40 depending on source \u2014 discrepancy not resolved.",
+    "desc": "Family medicine physician, board certified; graduated medical school in the Philippines and completed a Family Medicine residency at Pinnacle Health-Polyclinic Medical Center; practices primary care at HCA Florida St. Lucie Medical Specialists.",
+    "pending": false
+  },
+  {
+    "id": "h28",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Ira Pearlstine, MD (Preserve Health MD)",
+    "phone": null,
+    "website": null,
+    "address": "561 NW Lake Whitney Place, Suite 104, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/primary-care-physicians-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Featured as a top-3 pick on Three Best Rated; no numeric patient-review rating located despite several searches. Phone number could not be confirmed.",
+    "desc": "Founder of Preserve Health MD, described by the practice as Port St. Lucie's first direct patient care (concierge-style) practice; practicing on the Treasure Coast since 1987.",
+    "pending": false
+  },
+  {
+    "id": "h29",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "James Schuck, DO",
+    "phone": "(772) 398-1800",
+    "website": null,
+    "address": "1651 SE Tiffany Ave, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/james-schuck-1982231908"
+      }
+    ],
+    "note": "Review count not shown in the directory snippet; treat the 5.0 as a thin sample. Accepts Aetna, BCBS, UnitedHealthcare, Cigna per listing.",
+    "desc": "Family medicine physician (DO); listing also shows a second office location in Stuart, FL sharing the same phone number.",
+    "pending": false
+  },
+  {
+    "id": "h30",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "Robert Bogle, MD",
+    "phone": "(772) 343-1774",
+    "website": null,
+    "address": "4007 SW Port St Lucie Blvd, Port St. Lucie, FL 34953",
+    "zip": "34953",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-robert-bogle-1356676845"
+      }
+    ],
+    "note": "Rating is based on a single review \u2014 a weak signal despite the perfect score. 21 years of experience per listing; affiliated with HCA Florida St. Lucie Hospital.",
+    "desc": "General medical practice physician at Physicians Immediate Care Southwest LLC; also has listed offices in Bradenton and Lutz, FL.",
+    "pending": false
+  },
+  {
+    "id": "h31",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "Cara Donnelly, DO",
+    "phone": null,
+    "website": null,
+    "address": "1881 SE Tiffany Ave, Suite 102, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-cara-donnelly-1942874748"
+      }
+    ],
+    "note": "Listing explicitly states 'Be the first to review this provider!' \u2014 zero reviews on record.",
+    "desc": "Board certified in Family Practice; completed residency at Southern Colorado Family Medicine Residency; accepting new patients per listing.",
+    "pending": false
+  },
+  {
+    "id": "h32",
+    "category": "primary-care",
+    "specialty": "Primary Care",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "Regine Dorvil, MD",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 1.0,
+      "count": 1
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-regine-dorvil-1043674880"
+      }
+    ],
+    "note": "Rating based on a single review \u2014 ranked last due to the explicit negative signal, though the tiny sample could be an outlier.",
+    "desc": "General medicine practitioner in Port St. Lucie; no further biographical detail could be sourced.",
+    "pending": false
+  },
+  {
+    "id": "h33",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Lorenzo Digiorgio, MD",
+    "phone": "(772) 419-4834",
+    "website": "https://my.clevelandclinic.org/staff/27388-lorenzo-digiorgio",
+    "address": "Tradition HealthPark Two, 10080 SW Innovation Way, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": {
+      "value": 4.9,
+      "count": 580
+    },
+    "ratingSource": "Cleveland Clinic",
+    "sources": [
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://my.clevelandclinic.org/staff/27388-lorenzo-digiorgio"
+      },
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/provider/lorenzo-digiorgio/4271911"
+      },
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/specialty/Urology/near/Port%20St%20Lucie%2C%20FL"
+      }
+    ],
+    "note": "Clearly the strongest rating and largest review volume found in this category.",
+    "desc": "Clinical Director of Urology at Cleveland Clinic Martin Health; MD from University at Buffalo (2013), urology residency at Rutgers New Jersey Medical School (2018), urology-andrology fellowship at University of South Florida (2019); board certified by the American Board of Urology (2023 per MediFind). Focus areas include erectile dysfunction, penile implants, Peyronie's disease, vasectomy, kidney stones, and BPH.",
+    "pending": false
+  },
+  {
+    "id": "h34",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Michael C. Solomon, MD, PA, FACS",
+    "phone": "(772) 468-0042",
+    "website": null,
+    "address": "555 NW Lake Whitney Place, Suite 103, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": "Cleveland Clinic Martin North Hospital",
+    "rating": {
+      "value": 4.5,
+      "count": null
+    },
+    "ratingSource": "Healthgrades",
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/urologists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-michael-solomon-1023070539"
+      },
+      {
+        "type": "source",
+        "url": "https://www.stedi.com/site/npi-registry/npis/1023070539"
+      }
+    ],
+    "note": "Exact Healthgrades review count wasn't visible in the search snippet. Also a Three Best Rated top-3 pick; ~34 years of experience per Healthline.",
+    "desc": "Board certified by the American Board of Urology (FACS); completed a one-year urological oncology research fellowship at Memorial Sloan Kettering Cancer Center; focus areas include BPH, kidney stones, prostatitis, urinary incontinence, vasectomy, and genitourinary cancers; affiliated with Cleveland Clinic Martin North Hospital.",
+    "pending": false
+  },
+  {
+    "id": "h35",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "Allen Seeger, MD",
+    "phone": "(772) 335-3056",
+    "website": null,
+    "address": "451 SW Bethany Dr, Suite 201, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": "HCA Florida St. Lucie Hospital; Cleveland Clinic Martin North Hospital; HCA Florida Lawnwood Hospital",
+    "rating": {
+      "value": 3.8,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-allen-seeger-1598822090"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/doctors/allen-r-seeger/10844985"
+      },
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-allen-seeger-1598822090"
+      },
+      {
+        "type": "Wellness.com",
+        "url": "https://www.wellness.com/find/urologist/fl/port%20saint%20lucie"
+      }
+    ],
+    "note": "A second directory lists a different address (1801 SE Hillmoor Dr Ste A-103) \u2014 unresolved conflict, confirm before publishing. Medical News Today shows zero reviews on its own page.",
+    "desc": "Board certified in Urology; ~43 years of experience; affiliated with HCA Florida St. Lucie Hospital, Cleveland Clinic Martin North Hospital, and HCA Florida Lawnwood Hospital. Accepts Cigna, Humana, Florida Blue per listing.",
+    "pending": false
+  },
+  {
+    "id": "h36",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "Adam J. Ball, MD (Gulfstream Urology Associates, PA)",
+    "phone": "(772) 465-2020",
+    "website": null,
+    "address": "579 NW Lake Whitney Place, Suite 105, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Medical News Today",
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://www.doximity.com/pub/adam-ball-md"
+      },
+      {
+        "type": "source",
+        "url": "https://www.ibegin.com/directory/visit/15577139"
+      },
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-adam-ball-1366438517"
+      },
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/adam-ball-md"
+      }
+    ],
+    "note": "Rating is based on a single review \u2014 downweighted below Dr. Seeger's more established listing despite the higher raw number.",
+    "desc": "Owner of Gulfstream Urology Associates, PA; focus on minimally invasive surgery, stone disease, vasectomy, and prostate biopsy; operates at North County Surgery Center and St. Lucie Surgery Center.",
+    "pending": false
+  },
+  {
+    "id": "h37",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "Paul Bower, MD (Bower Urology)",
+    "phone": null,
+    "website": null,
+    "address": "1941 SE Port St. Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 2.3,
+      "count": 15
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Medical News Today",
+        "url": "https://www.medicalnewstoday.com/provider/dr-paul-bower-1144540386"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/doctors/paul-e-bower/11189773"
+      },
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/paul-bower-md"
+      }
+    ],
+    "note": "A second directory shows a conflicting 3.0/2-review figure for the same provider \u2014 both samples are small and the two numbers disagree; treat with caution. One written review found was positive, praising prostatectomy care.",
+    "desc": "Urologist at Bower Urology; MediFind lists expertise areas including obstructive uropathy, hydronephrosis, ureteroscopy, and lithotripsy; accepts Cigna, Health Options, Humana, and Florida Blue per listing.",
+    "pending": false
+  },
+  {
+    "id": "h38",
+    "category": "urology",
+    "specialty": "Urology",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "David Nehme, MD (David Nehme MD PA)",
+    "phone": "(772) 781-9922",
+    "website": null,
+    "address": "1701 SE Hillmoor Dr, Suite D18, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "Cleveland Clinic Martin North Hospital",
+    "rating": {
+      "value": 2.3,
+      "count": 7
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-david-nehme-1326080474"
+      },
+      {
+        "type": "Healthgrades",
+        "url": "https://www.healthgrades.com/group-directory/fl-florida/port-saint-lucie/david-nehme-md-pa-ooo8tvn"
+      }
+    ],
+    "note": "Lowest rating in this category with a meaningful review count (7), so ranked last. Not to be confused with a different, unrelated provider (\"Dr. John Nehme, MD\") who practices in Stuart, FL.",
+    "desc": "Board certified in Urology; affiliated with Cleveland Clinic Martin North Hospital; telehealth available per Healthgrades group listing.",
+    "pending": false
+  },
+  {
+    "id": "h39",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 1,
+    "groupSize": 9,
+    "name": "Heidi McNaney Flint, MD",
+    "phone": null,
+    "website": null,
+    "address": "863 SE Monterey Commons Blvd, Stuart, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 4.97,
+      "count": 230
+    },
+    "ratingSource": "Tebra",
+    "sources": [
+      {
+        "type": "Tebra",
+        "url": "https://www.tebra.com/care/ob-gyns/port-st-lucie-fl/"
+      }
+    ],
+    "note": "Office address is in Stuart, not Port St. Lucie proper (serves the Treasure Coast / PSL region, roughly 9-12 miles away); Tebra only allows reviews after a completed appointment.",
+    "desc": "OB-GYN provider serving the Treasure Coast / Port St. Lucie region.",
+    "pending": false
+  },
+  {
+    "id": "h40",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 2,
+    "groupSize": 9,
+    "name": "Erika Cilurso, ARNP",
+    "phone": null,
+    "website": null,
+    "address": "863 SE Monterey Commons Blvd, Stuart, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 124
+    },
+    "ratingSource": "Tebra",
+    "sources": [
+      {
+        "type": "Tebra",
+        "url": "https://www.tebra.com/care/ob-gyns/port-st-lucie-fl/"
+      }
+    ],
+    "note": "Nurse practitioner, not an MD; same practice/building as Dr. Flint above, with the same out-of-city-limits caveat.",
+    "desc": "Women's health nurse practitioner described in reviews as knowledgeable and attentive.",
+    "pending": false
+  },
+  {
+    "id": "h41",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 3,
+    "groupSize": 9,
+    "name": "Charles M. Zollicoffer, MD",
+    "phone": null,
+    "website": "https://www.hcafloridahealthcare.com/physicians/profile/Dr-Charles-M-Zollicoffer-MD",
+    "address": "St. Lucie Women and Children Center, 9576 South U.S. Hwy 1, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": {
+      "value": 4.6,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-charles-zollicoffer-1750486460"
+      },
+      {
+        "type": "HCA Florida Healthcare",
+        "url": "https://www.hcafloridahealthcare.com/physicians/profile/Dr-Charles-M-Zollicoffer-MD"
+      }
+    ],
+    "note": "No Healthgrades profile was found for this physician despite checking directly.",
+    "desc": "Board-certified OB-GYN (American Board of Obstetrics & Gynecology) with 28 years of experience per Healthline listing; affiliated with HCA Florida St. Lucie Hospital.",
+    "pending": false
+  },
+  {
+    "id": "h42",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 4,
+    "groupSize": 9,
+    "name": "Gonzalo Oria, MD, FACOG (Physicians To Women)",
+    "phone": "(772) 288-2992",
+    "website": null,
+    "address": "1700 SE Hillmoor Drive, Suite 101, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": "Formerly Chairman of OB-GYN at Palmetto General Hospital per directory bio (current hospital affiliation not found)",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/gynecologists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/physicians-to-women-5bd0bd3c-5cf8-42ff-bbef-d606cbb3652c"
+      }
+    ],
+    "note": "Three Best Rated's listing is an editorial 'best of' pick, not a patient-review score. Address and phone differ between directories (another lists 8980 S US Hwy 1 Ste 102) \u2014 confirm directly before publishing.",
+    "desc": "Board-certified OB-GYN (American Board of Obstetrics & Gynecology); offers obstetrical services including VBAC; formerly Chairman of OB-GYN at Palmetto General Hospital, per directory bio.",
+    "pending": false
+  },
+  {
+    "id": "h43",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 5,
+    "groupSize": 9,
+    "name": "Eric Dickens, MD, FACOG (Women's Health Specialists)",
+    "phone": "772-219-1080",
+    "website": "https://whsfl.com",
+    "address": "10771 SW Trade Street, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/gynecologists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/doctors/frank-e-dickens/7673014"
+      }
+    ],
+    "note": "A different phone number (772-261-9636) is attributed to this doctor on another directory tied to a 'Florida Woman Care' listing \u2014 unresolved conflict. Practice reportedly has 50+ years of continuous service in the area per a local blog, treated as anecdotal.",
+    "desc": "OB-GYN practice; FACOG-credentialed physician.",
+    "pending": false
+  },
+  {
+    "id": "h44",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 6,
+    "groupSize": 9,
+    "name": "Pablo Gonzalez, MD (Saint Lucie Women & Children)",
+    "phone": null,
+    "website": null,
+    "address": "1871 SE Tiffany Ave, Suite 200, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/doctors/pablo-gonzalez/12723219"
+      }
+    ],
+    "note": "Limited profile information found.",
+    "desc": "OB-GYN practicing in Port St. Lucie, FL.",
+    "pending": false
+  },
+  {
+    "id": "h45",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 7,
+    "groupSize": 9,
+    "name": "St. Lucie Obstetrics & Gyn (Francisco Sosa, MD; David Mateo, MD)",
+    "phone": null,
+    "website": null,
+    "address": "1825 SE Tiffany Ave, Suite 102, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Wellness.com",
+        "url": "https://www.wellness.com/find/obgyn/fl/port%20saint%20lucie"
+      }
+    ],
+    "note": "Wellness.com shows a '110 points' score whose methodology is unexplained and not a patient star rating \u2014 not reported as a numeric rating. Lower-confidence listing; could not independently verify via a second source.",
+    "desc": "OB-GYN practice listed under this name and address.",
+    "pending": false
+  },
+  {
+    "id": "h46",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 8,
+    "groupSize": 9,
+    "name": "Florida OB/GYN Group",
+    "phone": null,
+    "website": null,
+    "address": "1801 SE Hillmoor Drive, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Wellness.com",
+        "url": "https://www.wellness.com/find/obgyn/fl/port%20saint%20lucie"
+      }
+    ],
+    "note": "Wellness.com shows a '150 points' score whose methodology is unexplained \u2014 not reported as a numeric rating. Could not independently verify beyond this one directory listing.",
+    "desc": "OB-GYN group practice.",
+    "pending": false
+  },
+  {
+    "id": "h47",
+    "category": "obgyn",
+    "specialty": "Gynecology / OB-GYN",
+    "rank": 9,
+    "groupSize": 9,
+    "name": "Grace Yoo, MD",
+    "phone": null,
+    "website": "https://connect.medicalnewstoday.com/provider/dr-grace-yoo-1518952571",
+    "address": "Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-grace-yoo-1518952571"
+      }
+    ],
+    "note": "Exact street address not captured in the search snippet.",
+    "desc": "OB-GYN with 35 years of experience, board-certified in Obstetrics & Gynecology, per directory listing.",
+    "pending": false
+  },
+  {
+    "id": "h48",
+    "category": "dermatology",
+    "specialty": "Dermatology",
+    "rank": 1,
+    "groupSize": 4,
+    "name": "Dr. Kerry Shaughnessy (Water's Edge Dermatology)",
+    "phone": "(772) 335-3550",
+    "website": "https://www.wederm.com",
+    "address": "1400 SE Goldtree Dr, Suite 107, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 4.96,
+      "count": 52
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/dermatologists/port-st-lucie-244043pm"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.wederm.com/location/port-st-lucie/"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/waters-edge-dermatology-bb490bc8-4703-e211-a42b-001f29e3eb44"
+      }
+    ],
+    "note": "Same practice's PA (Zocdoc 5.00, 35 reviews) and NP (4.88, 32 reviews) at this address also rate highly.",
+    "desc": "Board-certified dermatologist; undergraduate at Harvard University, MD from Eastern Virginia Medical School, per directory bio.",
+    "pending": false
+  },
+  {
+    "id": "h49",
+    "category": "dermatology",
+    "specialty": "Dermatology",
+    "rank": 2,
+    "groupSize": 4,
+    "name": "Dr. Ted Schiff",
+    "phone": null,
+    "website": null,
+    "address": "Jensen Beach, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 4.8,
+      "count": 41
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/dermatologists/port-st-lucie-244043pm"
+      }
+    ],
+    "note": "Office location is in Jensen Beach, not Port St. Lucie proper (roughly 10-15 miles away) \u2014 included as a nearby provider serving the area.",
+    "desc": "Double board-certified in dermatology and dermatopathology; fellowship-trained in Mohs surgery; focuses on skin cancer treatment, per listing. 25+ years of experience stated.",
+    "pending": false
+  },
+  {
+    "id": "h50",
+    "category": "dermatology",
+    "specialty": "Dermatology",
+    "rank": 3,
+    "groupSize": 4,
+    "name": "Riverchase Dermatology (Port St. Lucie)",
+    "phone": "(772) 871-1682",
+    "website": "https://riverchasedermatology.com",
+    "address": "264 NW Peacock Blvd, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "WellMed directory",
+        "url": "https://doctors.wellmedhealthcare.com/locations/details/15763"
+      },
+      {
+        "type": "WellMed directory",
+        "url": "https://doctors.wellmedhealthcare.com/locations/details/15795"
+      }
+    ],
+    "note": "A lead-generation aggregator showed 'Google 5.0 (1 review)', 'Yelp 3.7 (6)', 'Facebook 3.5 (47)' for the chain, but that page explicitly randomizes which location's data it displays for multi-location businesses, so these figures could not be confidently attributed to this address and were excluded. A second PSL address for this chain conflicted with another practice's listing for the same suite and was treated as stale.",
+    "desc": "Multi-location dermatology and cosmetic surgery practice with a Port St. Lucie office.",
+    "pending": false
+  },
+  {
+    "id": "h51",
+    "category": "dermatology",
+    "specialty": "Dermatology",
+    "rank": 4,
+    "groupSize": 4,
+    "name": "Advanced Dermatology and Cosmetic Surgery (Port St. Lucie)",
+    "phone": "(772) 318-4945",
+    "website": "https://www.advancedderm.com",
+    "address": "11474 SW Village Parkway, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://www.advancedderm.com/locations/309/PortStLucie.aspx"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/advanced-dermatology-and-cosmetic-surgery-port-sai-042b5e18-4d01-44e7-9889-53dbfb74098d"
+      }
+    ],
+    "note": "WebMD's listing showed no numeric reviews; a third-party aggregator described feedback as 'mostly positive' narratively with no score. An older address appears in some directories; the practice's own site confirms Village Parkway as current.",
+    "desc": "Dermatology and cosmetic surgery practice; part of a regional multi-location chain.",
+    "pending": false
+  },
+  {
+    "id": "h52",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 1,
+    "groupSize": 8,
+    "name": "Marc Silver, MD",
+    "phone": null,
+    "website": "https://my.clevelandclinic.org",
+    "address": "Tradition HealthPark One, 10050 SW Innovation Way, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": {
+      "value": 4.8,
+      "count": 238
+    },
+    "ratingSource": "Cleveland Clinic",
+    "sources": [
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/specialty/Hip%20and%20Knee%20Orthopedic%20Surgery/near/Port%20St%20Lucie%2C%20FL"
+      }
+    ],
+    "note": null,
+    "desc": "Orthopedic surgeon practicing orthopedic surgery and sports medicine at Cleveland Clinic's Tradition HealthPark location in Port St. Lucie.",
+    "pending": false
+  },
+  {
+    "id": "h53",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 2,
+    "groupSize": 8,
+    "name": "Jason Weisstein, MD",
+    "phone": "(772) 223-5630",
+    "website": "https://my.clevelandclinic.org/staff/30513-jason-weisstein",
+    "address": "Tradition HealthPark One, 10050 SW Innovation Way, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": {
+      "value": 4.7,
+      "count": 227
+    },
+    "ratingSource": "Cleveland Clinic",
+    "sources": [
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://providers.clevelandclinic.org/specialty/Hip%20and%20Knee%20Orthopedic%20Surgery/near/Port%20St%20Lucie%2C%20FL"
+      },
+      {
+        "type": "source",
+        "url": "https://patients.stryker.com/surgeons/4826-knee-hip-surgeon-port-saint-lucie-jason-scott-weisstein"
+      }
+    ],
+    "note": "Also sees patients in Hobe Sound.",
+    "desc": "Orthopedic surgeon at Cleveland Clinic Florida's Tradition HealthPark location, also listed as a Mako/Stryker knee & hip surgeon for Port St. Lucie.",
+    "pending": false
+  },
+  {
+    "id": "h54",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 3,
+    "groupSize": 8,
+    "name": "Andrew Do, MD (Florida Orthopaedic Specialists)",
+    "phone": null,
+    "website": null,
+    "address": "9077 S Federal Hwy, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-andrew-do-1568923878"
+      }
+    ],
+    "note": "Rating is based on a single review \u2014 too thin to be reliable.",
+    "desc": "Hand surgeon within the Florida Orthopaedic Specialists group.",
+    "pending": false
+  },
+  {
+    "id": "h55",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 4,
+    "groupSize": 8,
+    "name": "Edward J. Rossario, MD (Coastal Orthopaedic & Sports Medicine Center)",
+    "phone": null,
+    "website": null,
+    "address": "7710 S US Highway 1, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/orthopedics-in-port-st-lucie-fl"
+      },
+      {
+        "type": "source",
+        "url": "https://conformis.com/find-a-doctor/locations/coastal-orthopaedic-sports-medicine-center-port-st-lucie"
+      }
+    ],
+    "note": "Three Best Rated names him one of its '3 Best Orthopedics' picks, but that site's ranking methodology is its own and not a transparent star rating.",
+    "desc": "Board-certified orthopedic surgeon (per Three Best Rated profile) with over 22 years of clinical experience; focus includes arthroscopic shoulder/knee surgery, joint replacement, and spine conditions.",
+    "pending": false
+  },
+  {
+    "id": "h56",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 5,
+    "groupSize": 8,
+    "name": "Aron M. Trocchia, MD (Coastal Orthopaedic & Sports Medicine Center)",
+    "phone": null,
+    "website": null,
+    "address": "7710 S US Highway 1, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/orthopedics-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Same Three Best Rated methodology caveat as above.",
+    "desc": "Orthopedic surgeon whose listed focus includes fractures, rotator cuff injuries, and hip replacement.",
+    "pending": false
+  },
+  {
+    "id": "h57",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 6,
+    "groupSize": 8,
+    "name": "Mark J. Powers, MD (Florida Orthopaedic Specialists)",
+    "phone": null,
+    "website": null,
+    "address": "9077 S Federal Hwy, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "St. Lucie Medical Center; Jupiter Medical Center",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "MediFind",
+        "url": "https://medifind.com/doctors/mark-j-powers/9730996"
+      }
+    ],
+    "note": null,
+    "desc": "Orthopedics provider with listed expertise in osteoarthritis, frozen shoulder, bursitis, knee replacement, and hip replacement; hospital affiliations listed as St. Lucie Medical Center and Jupiter Medical Center.",
+    "pending": false
+  },
+  {
+    "id": "h58",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 7,
+    "groupSize": 8,
+    "name": "Robert A. Sellards, MD (Florida Orthopaedic Specialists)",
+    "phone": null,
+    "website": null,
+    "address": "9077 S Federal Hwy, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "HCA Florida St. Lucie Hospital",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://www.palmbeachhealthnetwork.com/provider/1386689164"
+      },
+      {
+        "type": "HCA Florida Healthcare",
+        "url": "https://hcafloridahealthcare.com/es-US/physicians/profile/Dr-Robert-A-Sellards-MD"
+      }
+    ],
+    "note": null,
+    "desc": "Board-certified orthopaedic surgeon, sports medicine, affiliated with HCA Florida St. Lucie Hospital.",
+    "pending": false
+  },
+  {
+    "id": "h59",
+    "category": "orthopedics",
+    "specialty": "Orthopedics",
+    "rank": 8,
+    "groupSize": 8,
+    "name": "William Stolzer, MD (Treasure Coast Orthopaedic Associates, PA)",
+    "phone": "(772) 335-3200",
+    "website": null,
+    "address": "1700 SE Hillmoor Dr, Suite 500, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-william-stolzer-1619969573"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/treasure-coast-orthopaedic-associates-pa-690cf2cb-edf1-47ef-b01a-2eb27a184855-overview"
+      }
+    ],
+    "note": "Listed as '51 years of experience' and board-certified, but no patient reviews found on any source checked.",
+    "desc": "Board-certified orthopedic surgeon at Treasure Coast Orthopaedic Associates.",
+    "pending": false
+  },
+  {
+    "id": "h60",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Maria Rizo, MD (ABC Pediatrics of St. Lucie)",
+    "phone": null,
+    "website": "https://www.zocdoc.com/doctor/maria-rizo-md-66156",
+    "address": "437 SW Bethany Drive, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 4.8,
+      "count": 25
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/maria-rizo-md-66156"
+      }
+    ],
+    "note": "Some underlying reviews date back to 2015, so recency is uncertain. A separate, unrelated Sharecare listing for a different 'Dr. Maria Rizo' with a 1.0/1-review score could not be confirmed as the same practice and was excluded.",
+    "desc": "Pediatrician at ABC Pediatrics of St. Lucie; reviewers describe her as thorough, though wait times were noted as long.",
+    "pending": false
+  },
+  {
+    "id": "h61",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Maria L. Gaviria-Tobon, MD, FAAP (Pediatric Associates)",
+    "phone": "(772) 336-2818",
+    "website": "https://www.pediatricassociates.com/pediatricians/maria-l-gaviria-tobon-md-faap",
+    "address": "1850 SW Fountainview Blvd, Suite 105, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 4.8,
+      "count": 28
+    },
+    "ratingSource": "Birdeye",
+    "sources": [
+      {
+        "type": "Birdeye",
+        "url": "https://birdeye.com/maria-gaviria-tobon-faap-md-178639970689455"
+      },
+      {
+        "type": "Pediatric Associates",
+        "url": "https://www.pediatricassociates.com/pediatricians/maria-l-gaviria-tobon-md-faap"
+      }
+    ],
+    "note": "Phone number from a third-party listing, unverified directly with the office.",
+    "desc": "Board-certified, bilingual (English/Spanish) pediatrician at Pediatric Associates' St. Lucie West office; reviewers describe her as thorough and attentive, including following up after a hospitalization.",
+    "pending": false
+  },
+  {
+    "id": "h62",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "Dorothy Jeannette Hill, DO",
+    "phone": null,
+    "website": null,
+    "address": "1701 SE Hillmoor Dr, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Medical News Today",
+    "sources": [
+      {
+        "type": "Medical News Today",
+        "url": "https://connect.medicalnewstoday.com/provider/dr-dorothy-hill-1558320721"
+      }
+    ],
+    "note": "Rating based on a single review \u2014 low confidence.",
+    "desc": "Pediatrician with 27 years of listed experience; also appears in sensory-friendly/developmental pediatrics directory listings for the area.",
+    "pending": false
+  },
+  {
+    "id": "h63",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "Ramon Chiong, DO",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Sharecare",
+    "sources": [
+      {
+        "type": "Sharecare",
+        "url": "https://providers.sharecare.com/doctor/dr-ramon-chiong"
+      }
+    ],
+    "note": "Rating based on a single review \u2014 low confidence; exact office address not confirmed in sources checked.",
+    "desc": "Pediatrician listed with 30 years of experience, accepting new patients.",
+    "pending": false
+  },
+  {
+    "id": "h64",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "Veronica Espinoza, MD (Bee Well Pediatrics)",
+    "phone": "(772) 873-7114",
+    "website": null,
+    "address": "1721 SW Gatlin Blvd, Port St. Lucie, FL 34953",
+    "zip": "34953",
+    "hospital": "Listed on Cleveland Clinic's provider directory (affiliation not further detailed in sources checked)",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/pediatricians-in-port-st-lucie-fl"
+      },
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://my.clevelandclinic.org/staff/100414-veronica-espinoza"
+      }
+    ],
+    "note": "Named one of Three Best Rated's '3 Best Pediatricians' picks, but no numeric star rating was found on any source checked; a second practice address also appears in one directory.",
+    "desc": "Bilingual (English/Spanish) pediatrician; per a directory bio, trained at University of Miami/Jackson Memorial and offers in-person and telehealth visits.",
+    "pending": false
+  },
+  {
+    "id": "h65",
+    "category": "pediatrics",
+    "specialty": "Pediatrics",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "Ernesto Barral, MD (Little People Pediatrics)",
+    "phone": null,
+    "website": null,
+    "address": "1511 SE Port St. Lucie Blvd, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/pediatricians-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Named one of Three Best Rated's '3 Best Pediatricians' picks; no numeric rating or phone number found elsewhere.",
+    "desc": "Pediatrician at Little People Pediatrics.",
+    "pending": false
+  },
+  {
+    "id": "h66",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 1,
+    "groupSize": 7,
+    "name": "Dr. Eduardo Bustamante (St. Lucie Eye, EyeSouth Partners)",
+    "phone": null,
+    "website": null,
+    "address": "1302 SW St. Lucie West Blvd, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": "HCA Florida St. Lucie Hospital; Tampa General Hospital",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Healthgrades",
+        "url": "https://www.healthgrades.com/physician/dr-eduardo-bustamante-xylqsnt"
+      },
+      {
+        "type": "source",
+        "url": "https://www.optometrytimes.com/view/eyesouth-partners-adds-st-lucie-eye-of-florida-to-partner-network"
+      },
+      {
+        "type": "source",
+        "url": "https://invisionmag.com/eyesouth-partners-affiliates-with-st-lucie-eye/"
+      }
+    ],
+    "note": "Healthgrades profile could not be directly fetched (network-blocked); details drawn from search snippet and corroborating sources. The practice traces to 1948 per EyeSouth press coverage. Practice phone is reported inconsistently across directories.",
+    "desc": "7+ years of experience per Healthgrades listing; affiliated with HCA Florida St. Lucie Hospital and Tampa General Hospital; accepting new patients.",
+    "pending": false
+  },
+  {
+    "id": "h67",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 2,
+    "groupSize": 7,
+    "name": "Dr. William Dreyer Jr, MD (Florida Vision Institute)",
+    "phone": "(772) 337-2020",
+    "website": null,
+    "address": "1751 SE Port St Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-william-dreyer-1821327412"
+      },
+      {
+        "type": "practice site",
+        "url": "https://myvision.org/directory/florida-vision-institute-zz9cmmzdz9"
+      }
+    ],
+    "note": "Separate aggregator pages show the practice's locations around 4.7 stars across 900+ reviews, but the underlying review platform isn't disclosed there, so it is not reported here as a sourced rating.",
+    "desc": "Board-certified ophthalmologist with about 50 years of experience; listed as accepting new patients.",
+    "pending": false
+  },
+  {
+    "id": "h68",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 3,
+    "groupSize": 7,
+    "name": "Dr. Jodi Luchs, MD (Florida Vision Institute)",
+    "phone": "(772) 345-1500",
+    "website": null,
+    "address": "10050 SW Innovation Way, Suite 101, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Conjunctivitis%20(Pink%20Eye)/1324/doctors/jodi-i-luchs/7347776"
+      },
+      {
+        "type": "WellMed directory",
+        "url": "https://doctors.wellmedhealthcare.com/locations/details/10333"
+      }
+    ],
+    "note": "Sources disagree on which phone number reaches his Port St. Lucie office versus a West Palm Beach office \u2014 verify before calling.",
+    "desc": "Board certified by the American Board of Ophthalmology; listed focus areas include cataract, pterygium, and conjunctivitis (pink eye) care.",
+    "pending": false
+  },
+  {
+    "id": "h69",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 4,
+    "groupSize": 7,
+    "name": "Dr. Daniel Del Rowe, MD (Cleveland Clinic Martin Health)",
+    "phone": "(772) 337-0199",
+    "website": null,
+    "address": "One Day Surgery, 1715 SE Tiffany Ave, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": "Cleveland Clinic Martin Health",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-daniel-del-rowe-1497780357"
+      },
+      {
+        "type": "Sharecare",
+        "url": "https://providers.sharecare.com/doctor/dr-daniel-del-rowe-xpwj3"
+      }
+    ],
+    "note": null,
+    "desc": "45 years of experience, board certified in ophthalmology, graduated Drexel University College of Medicine (1981); listed as accepting new patients.",
+    "pending": false
+  },
+  {
+    "id": "h70",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 5,
+    "groupSize": 7,
+    "name": "Dr. William Vickers, MD",
+    "phone": null,
+    "website": null,
+    "address": "260 NW Peacock Blvd, Suite 101, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-william-vickers-1639269798"
+      },
+      {
+        "type": "source",
+        "url": "https://eyeplastics.com/find-a-doctor/florida/port-saint-lucie/william-vickers"
+      }
+    ],
+    "note": "An oculoplastics subspecialty listing could not be fully cross-confirmed as the same individual; treat that detail cautiously.",
+    "desc": "20 years of experience, board certified in ophthalmology; accepts Blue Cross Blue Shield, Aetna, and UnitedHealthcare among other plans, per listing.",
+    "pending": false
+  },
+  {
+    "id": "h71",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 6,
+    "groupSize": 7,
+    "name": "Katz Eye Center (Dr. Alexander Katz, MD)",
+    "phone": "(772) 446-4230",
+    "website": null,
+    "address": "260 NW Peacock Blvd, Suite 201, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": "Listed on Cleveland Clinic's provider directory (affiliation not further detailed in sources checked)",
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Cleveland Clinic",
+        "url": "https://my.clevelandclinic.org/staff/100747-alexander-katz"
+      },
+      {
+        "type": "source",
+        "url": "https://invisionmag.com/eyesouth-partners-affiliates-with-katz-eye-center"
+      },
+      {
+        "type": "MediFind",
+        "url": "https://www.medifind.com/conditions/Glaucoma/2213/doctors/location/US/FL/Port%20Saint%20Lucie"
+      }
+    ],
+    "note": "A second practice address also appears in some directories; the one above was the better-corroborated of the two.",
+    "desc": "Board-certified ophthalmologist practicing in South Florida since 2006; clinical focus on glaucoma, cataract, and dry eye disease management.",
+    "pending": false
+  },
+  {
+    "id": "h72",
+    "category": "ophthalmology",
+    "specialty": "Ophthalmology",
+    "rank": 7,
+    "groupSize": 7,
+    "name": "Dr. Richard Seith, MD",
+    "phone": null,
+    "website": "https://www.zocdoc.com/doctor/richard-seith-md",
+    "address": "514 SW Prima Vista Blvd, Port St. Lucie, FL 34983",
+    "zip": "34983",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/richard-seith-md"
+      }
+    ],
+    "note": "Listing shows only 3 insurance plans accepted \u2014 confirm coverage before booking.",
+    "desc": "More than 20 years of experience in ophthalmology, per Zocdoc listing.",
+    "pending": false
+  },
+  {
+    "id": "h73",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 1,
+    "groupSize": 10,
+    "name": "Gabriel Rodriguez Lora, PMHNP",
+    "phone": null,
+    "website": null,
+    "address": "Telehealth / virtual \u2014 serves Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 4
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://zocdoc.com/psychiatrists/port-st-lucie-244043pm"
+      }
+    ],
+    "note": null,
+    "desc": "Board-certified Psychiatric Mental Health Nurse Practitioner offering virtual psychiatric care.",
+    "pending": false
+  },
+  {
+    "id": "h74",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 2,
+    "groupSize": 10,
+    "name": "Liziana Saintfleur, PMHNP",
+    "phone": null,
+    "website": null,
+    "address": "Telehealth / virtual \u2014 serves Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 2
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://zocdoc.com/psychiatrists/port-st-lucie-244043pm"
+      }
+    ],
+    "note": null,
+    "desc": "Board-certified adult psychiatric and mental health nurse practitioner.",
+    "pending": false
+  },
+  {
+    "id": "h75",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 3,
+    "groupSize": 10,
+    "name": "Marie Remy, PMHNP",
+    "phone": null,
+    "website": null,
+    "address": "1362 SW Bayshore Blvd, Port St. Lucie, FL 34983",
+    "zip": "34983",
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Zocdoc",
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://zocdoc.com/psychiatrists/port-st-lucie-244043pm"
+      }
+    ],
+    "note": "Rating based on a single review \u2014 a small sample.",
+    "desc": "Family and psychiatric nurse practitioner.",
+    "pending": false
+  },
+  {
+    "id": "h76",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 4,
+    "groupSize": 10,
+    "name": "Dr. JoAnna VanVleet, DO, DFAPA (Florida Psychiatry Associates)",
+    "phone": "(772) 878-7216",
+    "website": null,
+    "address": "260 NW Peacock Blvd, Suite 102, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": null
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/dr-joanna-vanvleet-1154535292"
+      },
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/psychiatrists/florida-psychiatry-associates-port-saint-lucie-fl/1243604"
+      }
+    ],
+    "note": "Healthline shows a 5.0 average but does not disclose the number of reviews it's based on. A second office is listed at 160 NW Central Park Plaza, Suite 104.",
+    "desc": "Board certified in psychiatry and addiction medicine; 21 years of experience; practice emphasizes medication management with minimal use of prescription drugs, per listing. Accepts Blue Cross Blue Shield, Aetna, and Cigna among other plans.",
+    "pending": false
+  },
+  {
+    "id": "h77",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 5,
+    "groupSize": 10,
+    "name": "Dr. Renata Angelini, MD",
+    "phone": null,
+    "website": null,
+    "address": "540 NW University Blvd, Suite 201, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/psychiatrists-in-port-st-lucie-fl"
+      },
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/psychiatrists/34986"
+      }
+    ],
+    "note": "A Florida medical license number cited in a directory listing was not independently verified here. Psychology Today shows '1 Endorsed,' not a star rating.",
+    "desc": "Describes a holistic approach to psychiatric care; listed specialties include anxiety, depression, grief, mood disorders, OCD, postpartum care, insomnia, and PTSD.",
+    "pending": false
+  },
+  {
+    "id": "h78",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 6,
+    "groupSize": 10,
+    "name": "Dr. Ney F. Andujar, MD",
+    "phone": null,
+    "website": null,
+    "address": "1401 SE Goldtree Dr, Suite 104, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Zocdoc",
+        "url": "https://www.zocdoc.com/doctor/ney-andujar-md"
+      },
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/andujar-ney-office-14480bc8-4703-e211-a42b-001f29e3eb44"
+      }
+    ],
+    "note": "A single unverified negative complaint about this provider appears on a consumer complaints site; it is a one-sided, unconfirmed account, not a platform rating, and is noted rather than relied upon.",
+    "desc": "20+ years of experience; listed specialties include ADHD, schizophrenia, and major depressive disorder.",
+    "pending": false
+  },
+  {
+    "id": "h79",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 7,
+    "groupSize": 10,
+    "name": "Dr. Chenhang Zou, MD",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL 34983",
+    "zip": "34983",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/psychiatrists/34983"
+      }
+    ],
+    "note": "Specific street address not found.",
+    "desc": "Accepting new patients for anxiety, depression, trauma, OCD, and bipolar disorder; listing describes a holistic approach combining psychotherapy and lifestyle changes with medication.",
+    "pending": false
+  },
+  {
+    "id": "h80",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 8,
+    "groupSize": 10,
+    "name": "Lucia B. Stanfield, MS, LMHC, QS",
+    "phone": "(772) 837-6950",
+    "website": null,
+    "address": "Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/therapists/lucia-b-stanfield-port-saint-lucie-fl/925562"
+      }
+    ],
+    "note": "A third-party referral site describes generically 'high satisfaction,' not a numeric rating, so it isn't reported as one.",
+    "desc": "Licensed Mental Health Counselor in Florida; roughly 20 years of practice; works with depression, anxiety, marital distress, and parenting stress.",
+    "pending": false
+  },
+  {
+    "id": "h81",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 9,
+    "groupSize": 10,
+    "name": "Bettie Gerard, LCSW",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/therapists/bettie-gerard-port-saint-lucie-fl/363657"
+      }
+    ],
+    "note": null,
+    "desc": "Licensed Clinical Social Worker with more than 30 years of experience; listed specialties include PTSD, grief, women's issues, and depression/anxiety.",
+    "pending": false
+  },
+  {
+    "id": "h82",
+    "category": "psychiatry",
+    "specialty": "Psychiatry / Mental Health",
+    "rank": 10,
+    "groupSize": 10,
+    "name": "Matthew Kingrey, LCSW, MCAP",
+    "phone": null,
+    "website": null,
+    "address": "Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Psychology Today",
+        "url": "https://www.psychologytoday.com/us/therapists/fl/port-saint-lucie?page=7"
+      }
+    ],
+    "note": null,
+    "desc": "Licensed Clinical Social Worker; works with adults and couples on anxiety, depression, trauma, and relationship issues.",
+    "pending": false
+  },
+  {
+    "id": "h83",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 1,
+    "groupSize": 6,
+    "name": "Back to You Physical Therapy (Dr. Paul Jacobs, DPT)",
+    "phone": "(772) 271-4200",
+    "website": null,
+    "address": "3002 SW Port St. Lucie Blvd, Port St. Lucie, FL 34953",
+    "zip": "34953",
+    "hospital": null,
+    "rating": {
+      "value": 4.98,
+      "count": 83
+    },
+    "ratingSource": "Tebra",
+    "sources": [
+      {
+        "type": "Tebra",
+        "url": "https://www.tebra.com/care/provider/paul-jacobs-dpt-1376965020"
+      },
+      {
+        "type": "source",
+        "url": "https://www.poyst.com/business/back-to-you-chiropractic-physical-therapy"
+      }
+    ],
+    "note": "Strongest numeric review evidence found of any PT clinic in the area.",
+    "desc": "Independent physical therapy practice; profile indicates orthopedic/general outpatient physical therapy care.",
+    "pending": false
+  },
+  {
+    "id": "h84",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 2,
+    "groupSize": 6,
+    "name": "Select Physical Therapy - Port St. Lucie",
+    "phone": null,
+    "website": "https://www.selectphysicaltherapy.com/contact/find-a-location/fl/port-st-lucie/port-st-lucie/",
+    "address": "156 NW California Blvd, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": {
+      "value": 3.3,
+      "count": 6
+    },
+    "ratingSource": "Beaming Health",
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://www.selectphysicaltherapy.com/contact/find-a-location/fl/port-st-lucie/port-st-lucie/"
+      },
+      {
+        "type": "Beaming Health",
+        "url": "https://beaminghealth.com/physical-therapy/port-saint-lucie-34952/aetna"
+      }
+    ],
+    "note": "Rating drawn from a small, insurer-specific directory sample (6 reviews); a separate staffing-site listing shows 4.0/1 review for the same clinic, so treat with caution.",
+    "desc": "Part of the national Select Medical outpatient network; offers orthopedic rehab, hand therapy, sports medicine and work conditioning. Closed weekends.",
+    "pending": false
+  },
+  {
+    "id": "h85",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 3,
+    "groupSize": 6,
+    "name": "Premiere Physical Therapy & Sports Medicine (Dr. Harshal Vora, DPT)",
+    "phone": "(772) 335-7966",
+    "website": null,
+    "address": "1400 SE Goldtree Dr, Suite 205, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": {
+      "value": 5.0,
+      "count": 1
+    },
+    "ratingSource": "Healthline",
+    "sources": [
+      {
+        "type": "Healthline",
+        "url": "https://care.healthline.com/find-care/provider/harshal-vora-1730625971"
+      }
+    ],
+    "note": "Perfect score but based on only 1 review \u2014 very low confidence.",
+    "desc": "Orthopedic/sports-medicine-oriented outpatient physical therapy clinic.",
+    "pending": false
+  },
+  {
+    "id": "h86",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 4,
+    "groupSize": 6,
+    "name": "NAU Physical Therapy and Wellness (Sokunthea 'Sukie' Nau, DPT)",
+    "phone": null,
+    "website": null,
+    "address": "8509 South US Highway 1, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/physical-therapists-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "Named a top local pick by Three Best Rated (own 50-point methodology, not an independent star rating); operating since 2007.",
+    "desc": "Specializes in lower back/neck/shoulder pain, dry needling, Class 4 laser, and manual therapy; offers a free discovery session.",
+    "pending": false
+  },
+  {
+    "id": "h87",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 5,
+    "groupSize": 6,
+    "name": "CORA Physical Therapy - St. Lucie West",
+    "phone": "(772) 878-3322",
+    "website": "https://coraphysicaltherapy.com/location/st-lucie-west-florida/",
+    "address": "St. Lucie West, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://coraphysicaltherapy.com/location/st-lucie-west-florida/"
+      },
+      {
+        "type": "Birdeye",
+        "url": "https://reviews.birdeye.com/cora-physical-therapy-poinciana-157265370748477"
+      },
+      {
+        "type": "source",
+        "url": "https://www.poyst.com/business/cora-physical-therapy-st-lucie-west"
+      }
+    ],
+    "note": "No aggregate star rating found for this location; testimonials on secondary sites are positive but not a scored total. Exact street address not published in sources found.",
+    "desc": "Outpatient orthopedic, sports, and work-comp/industrial rehab clinic; part of the national CORA chain.",
+    "pending": false
+  },
+  {
+    "id": "h88",
+    "category": "physical-therapy",
+    "specialty": "Physical Therapy",
+    "rank": 6,
+    "groupSize": 6,
+    "name": "Quality Performance Rehabilitation - Goldtree",
+    "phone": null,
+    "website": null,
+    "address": "1400 Goldtree Dr, Suite 101, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "source",
+        "url": "https://mobile.top4.com.au/business/quality-performance-rehabilitation-goldtree-609097"
+      }
+    ],
+    "note": "Minimal public information found; include with low confidence \u2014 verify directly before contacting.",
+    "desc": "Physical therapy clinic listed in local directories; services not independently confirmed.",
+    "pending": false
+  },
+  {
+    "id": "h89",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 1,
+    "groupSize": 8,
+    "name": "PM Pediatric Urgent Care (formerly Night Lite Pediatrics)",
+    "phone": "(772) 877-0342",
+    "website": "https://pmpediatriccare.com",
+    "address": "131 SW Port St. Lucie Blvd, Port St. Lucie, FL 34984",
+    "zip": "34984",
+    "hospital": null,
+    "rating": {
+      "value": 4.5,
+      "count": 1514
+    },
+    "ratingSource": "Birdeye",
+    "sources": [
+      {
+        "type": "WebMD",
+        "url": "https://doctor.webmd.com/practice/night-lite-pediatrics-urgent-care-38cd30b5-f1a8-4f0d-bf23-d45ca0ee1cf3"
+      },
+      {
+        "type": "Birdeye",
+        "url": "https://birdeye.com/pm-pediatric-urgent-care-formerly-night-lite-pediatrics-172167128231837"
+      }
+    ],
+    "note": "Recently rebranded from Night Lite Pediatrics.",
+    "desc": "Walk-in pediatric urgent care open evenings and weekends (hours vary by source, roughly 10am-10pm daily); treats strep, lacerations/stitches, and viral illness, with on-site pediatric X-ray.",
+    "pending": false
+  },
+  {
+    "id": "h90",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 2,
+    "groupSize": 8,
+    "name": "CareSpot Urgent Care - Port St. Lucie",
+    "phone": "(772) 878-7311",
+    "website": null,
+    "address": "784 E Prima Vista Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 4.5,
+      "count": 1478
+    },
+    "ratingSource": "Solv Health",
+    "sources": [
+      {
+        "type": "Solv Health",
+        "url": "https://www.solvhealth.com/carespot-urgent-care-port-st-lucie-fl-p3WO9p"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.bluehive.com/provider/carespot-urgent-care-port-st-lucie"
+      }
+    ],
+    "note": null,
+    "desc": "General walk-in urgent care, open 7 days a week, roughly 8am-8pm.",
+    "pending": false
+  },
+  {
+    "id": "h91",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 3,
+    "groupSize": 8,
+    "name": "MD Now Urgent Care - Saint Lucie West",
+    "phone": "(772) 873-8155",
+    "website": "https://mymdnow.com/locations/saint-lucie-west-urgent-care",
+    "address": "1730 SW St. Lucie West Blvd, Port St. Lucie, FL 34986",
+    "zip": "34986",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://mymdnow.com/locations/saint-lucie-west-urgent-care"
+      },
+      {
+        "type": "practice site",
+        "url": "https://bluehive.com/provider/md-now-urgent-care-saint-lucie-west"
+      },
+      {
+        "type": "Three Best Rated",
+        "url": "https://threebestrated.com/urgent-care-clinics-in-port-st-lucie-fl"
+      }
+    ],
+    "note": "A same-address 'CareNow Urgent Care' listing with no reviews likely reflects outdated/duplicate directory data from a prior brand rather than a separate active clinic.",
+    "desc": "Walk-in urgent care, Mon-Fri roughly 8am-8pm, Sat-Sun roughly 8am-5pm; named by Three Best Rated as a top local pick.",
+    "pending": false
+  },
+  {
+    "id": "h92",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 4,
+    "groupSize": 8,
+    "name": "MD Now Urgent Care - Tradition",
+    "phone": "(772) 241-6840",
+    "website": "https://mymdnow.com/locations/tradition-urgent-care",
+    "address": "10650 SW Tradition Pkwy, Port St. Lucie, FL 34987",
+    "zip": "34987",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://mymdnow.com/locations/tradition-urgent-care"
+      },
+      {
+        "type": "practice site",
+        "url": "https://bluehive.com/provider/md-now-urgent-care-tradition-st-lucie"
+      }
+    ],
+    "note": null,
+    "desc": "Walk-in clinic, no appointment needed, treats adults and children.",
+    "pending": false
+  },
+  {
+    "id": "h93",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 5,
+    "groupSize": 8,
+    "name": "Healthcare Services Family Medicine & Urgent Care",
+    "phone": null,
+    "website": null,
+    "address": "1889 SE Port St. Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Solv Health",
+        "url": "https://www.solvhealth.com/healthcare-services-family-medicine---urgent-care-port-st--lucie-fl-gNLePJ"
+      }
+    ],
+    "note": "Not open weekends per listing; no reviews found.",
+    "desc": "Combined family-medicine/urgent-care practice offering non-emergency illness care, annual exams, sports physicals, and labs.",
+    "pending": false
+  },
+  {
+    "id": "h94",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 6,
+    "groupSize": 8,
+    "name": "Pediatrix Urgent Care of Florida - Port St. Lucie",
+    "phone": null,
+    "website": "https://www.pediatrix.com/find-care/practices/urgentcareflorida/facilities/port-st-lucie",
+    "address": "131 SW Port St. Lucie Blvd, Port St. Lucie, FL 34984",
+    "zip": "34984",
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "Solv Health",
+        "url": "https://www.solvhealth.com/pediatrix-urgent-care-of-florida-port-st-lucie-fl-gbNbKg"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.pediatrix.com/find-care/practices/urgentcareflorida/facilities/port-st-lucie"
+      }
+    ],
+    "note": "This address matches the one listed for PM Pediatric Urgent Care above in some directories \u2014 possible directory overlap; confirm the exact suite before visiting.",
+    "desc": "Pediatric urgent care brand; listed hours roughly Mon-Fri 3pm-11pm, Sat-Sun 11am-11pm; no reviews found yet.",
+    "pending": false
+  },
+  {
+    "id": "h95",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 7,
+    "groupSize": 8,
+    "name": "MD Now Urgent Care - Port St. Lucie East",
+    "phone": "(772) 398-1588",
+    "website": "https://mymdnow.com/locations/port-saint-lucie-east-urgent-care",
+    "address": "1900 SE Port St. Lucie Blvd, Port St. Lucie, FL 34952",
+    "zip": "34952",
+    "hospital": null,
+    "rating": {
+      "value": 2.0,
+      "count": 5
+    },
+    "ratingSource": "Solv Health",
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://mymdnow.com/locations/port-saint-lucie-east-urgent-care"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.bluehive.com/provider/md-now-urgent-care-port-st-lucie-east"
+      }
+    ],
+    "note": "Rating based on only 5 responses \u2014 too small a sample to be reliable; included for transparency. A same-address 'CareNow Urgent Care' listing with no reviews likely reflects outdated duplicate data.",
+    "desc": "Walk-in urgent care clinic.",
+    "pending": false
+  },
+  {
+    "id": "h96",
+    "category": "urgent-care",
+    "specialty": "Urgent Care",
+    "rank": 8,
+    "groupSize": 8,
+    "name": "MD Now Urgent Care - Port St. Lucie Southwest",
+    "phone": "(772) 343-1774",
+    "website": "https://mymdnow.com/locations/port-saint-lucie-southwest-urgent-care",
+    "address": "4007 SW Port St. Lucie Blvd, Port St. Lucie, FL",
+    "zip": null,
+    "hospital": null,
+    "rating": null,
+    "ratingSource": null,
+    "sources": [
+      {
+        "type": "practice site",
+        "url": "https://mymdnow.com/locations/port-saint-lucie-southwest-urgent-care"
+      },
+      {
+        "type": "practice site",
+        "url": "https://www.bluehive.com/provider/md-now-urgent-care-port-st-lucie-sw"
+      }
+    ],
+    "note": "Street address sourced from a third-party lab locator rather than the clinic's own page \u2014 lowest-confidence address in this category; verify before publishing.",
+    "desc": "Walk-in urgent care clinic, part of the MD Now Treasure Coast network.",
+    "pending": false
+  }
+];
+var CATEGORIES = [{"key": "cardiology", "label": "Cardiology"}, {"key": "gastroenterology", "label": "Gastroenterology"}, {"key": "dentistry", "label": "Dentistry"}, {"key": "ent", "label": "ENT / Otolaryngology"}, {"key": "primary-care", "label": "Primary Care"}, {"key": "urology", "label": "Urology"}, {"key": "obgyn", "label": "Gynecology / OB-GYN"}, {"key": "dermatology", "label": "Dermatology"}, {"key": "orthopedics", "label": "Orthopedics"}, {"key": "pediatrics", "label": "Pediatrics"}, {"key": "ophthalmology", "label": "Ophthalmology"}, {"key": "psychiatry", "label": "Psychiatry / Mental Health"}, {"key": "physical-therapy", "label": "Physical Therapy"}, {"key": "urgent-care", "label": "Urgent Care"}];
+var CAT_META = {
+  "cardiology":   {color:"#c4536b", icon:'<path d="M12 20s-8-5.5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 9c0 5.5-8 11-8 11z"/>'},
+  "gastroenterology": {color:"#4f8f7d", icon:'<path d="M4 7c0 0 2-2 5-2s4 3 7 3 4-2 4-2M4 12c0 0 2-2 5-2s4 3 7 3 4-2 4-2M4 17c0 0 2-2 5-2s4 3 7 3 4-2 4-2"/>'},
+  "dentistry":    {color:"#3fa7a0", icon:'<path d="M12 3.2c-2.3 0-4.2 1.4-4.2 3.6 0 1 .3 1.9.6 2.8.5 1.3.9 2.7.9 5.3 0 1.4.5 2.6 1.5 2.6s1.2-1.4 1.3-2.7c.1-1 .4-2 .9-2s.8 1 .9 2c.1 1.3.3 2.7 1.3 2.7s1.5-1.2 1.5-2.6c0-2.6.4-4 .9-5.3.3-.9.6-1.8.6-2.8 0-2.2-1.9-3.6-4.2-3.6z"/>'},
+  "ent":       {color:"#b98247", icon:'<path d="M8.5 14c0-4.2 2.8-9 6.5-9 2.9 0 5 2.4 5 5.3 0 1.9-1 3-2 4-.9.8-1.5 1.6-1.5 3.1 0 1.8-1.4 3.1-3.1 3.1-1.5 0-2.6-1-2.9-2.4"/><path d="M8.5 14c0 2.1 1 3.6 2.6 4"/>'},
+  "primary-care": {color:"#3e7cb1", icon:'<path d="M6 4v5.2a5.4 5.4 0 0010.8 0V4M6 4H4.3M16.8 4h1.7M11.4 13.4V16a5 5 0 005 5 3 3 0 10-3-3"/>'},
+  "urology":     {color:"#5b8c5a", icon:'<path d="M12 3c4 5 6.3 8.2 6.3 11.2a6.3 6.3 0 11-12.6 0C5.7 11.2 8 8 12 3z"/>'},
+  "obgyn":     {color:"#a8608f", icon:'<path d="M12 12c-3-4-8.5-3.3-8.5.6s5.5 4.6 8.5.6c3 4 8.5 3.3 8.5-.6S15 8 12 12z"/>'},
+  "dermatology":  {color:"#c99a3e", icon:'<circle cx="12" cy="12" r="3.6"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4"/>'},
+  "orthopedics":  {color:"#6e6aa8", icon:'<path d="M6 9.5a2.2 2.2 0 114.3.5 1.3 1.3 0 001.2 1.3h1a1.3 1.3 0 001.2-1.3 2.2 2.2 0 114.3-.5 2.2 2.2 0 11-4.3.5 1.3 1.3 0 00-1.2 1.3h-1a1.3 1.3 0 00-1.2-1.3A2.2 2.2 0 116 9.5z"/>'},
+  "pediatrics":   {color:"#2f9e9e", icon:'<circle cx="12" cy="10" r="4.3"/><path d="M8.3 12.8C6 13.6 4.5 15 4.5 18v1.5h15V18c0-3-1.5-4.4-3.8-5.2"/>'},
+  "ophthalmology": {color:"#3b93b8", icon:'<path d="M2.5 12S6.5 6 12 6s9.5 6 9.5 6-4 6-9.5 6-9.5-6-9.5-6z"/><circle cx="12" cy="12" r="2.6"/>'},
+  "psychiatry":   {color:"#8368a8", icon:'<path d="M9.5 4.2c-2.7 0-4.6 2-4.6 4.3 0 1-.3 1.5-1 2.1-.8.7-1.2 1.6-1.2 2.6 0 1.8 1.5 3 3.1 3 .2 1.6 1.6 2.8 3.2 2.8 1 0 1.9-.5 2.5-1.2.6.7 1.5 1.2 2.5 1.2 1.7 0 3.1-1.3 3.2-3 1.7 0 3.1-1.3 3.1-3 0-1-.4-1.9-1.2-2.6-.7-.6-1-1.1-1-2.1 0-2.3-2-4.3-4.6-4.3-1.1 0-2.1.4-2.8 1-.8-.6-1.7-1-2.8-1z"/><path d="M12 5.4v13.2"/>'},
+  "physical-therapy": {color:"#4f9a6b", icon:'<path d="M3 12h3.5l2-5.5L13 17l2-5h6"/>'},
+  "urgent-care":  {color:"#c0564f", icon:'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>'}
+};
+function catMeta(key){ return CAT_META[key] || {color:"#0e7c7a", icon:""}; }
+function catLabel(key){ var c = CATEGORIES.find(function(c){return c.key===key;}); return c ? c.label : key; }
+
+/* ---------- state ---------- */
+var state = {
+  providers: SEED_PROVIDERS.slice(),
+  favorites: {},     // id -> true
+  compare: {},       // id -> true
+  activeCategory: "all",
+  search: "",
+  googleOnly: false,
+  minRating: 0,
+  sort: "directory",
+  localOnly: true
+};
+var db = null, userNs = null, viewerId = null;
+
+/* ---------- toast ---------- */
+function toast(msg){
+  var wrap = document.getElementById("toastWrap");
+  var t = document.createElement("div");
+  t.className = "toast"; t.textContent = msg;
+  wrap.appendChild(t);
+  setTimeout(function(){ t.remove(); }, 3200);
+}
+
+/* ---------- favorites (local fallback) ---------- */
+function loadLocalFavorites(){
+  try{
+    var raw = localStorage.getItem("psl-health-favorites");
+    if(raw) state.favorites = JSON.parse(raw) || {};
+  }catch(e){}
+}
+function saveLocalFavorites(){
+  try{ localStorage.setItem("psl-health-favorites", JSON.stringify(state.favorites)); }catch(e){}
+}
+
+function toggleFavorite(id){
+  var isFav = !!state.favorites[id];
+  if(db && userNs && viewerId){
+    var col = db.collection("data/users/"+viewerId+"/favorites");
+    if(isFav){
+      col.doc(id).delete().catch(function(){ toast("Couldn't update your list &mdash; try again."); });
+    }else{
+      col.doc(id).set({added: Date.now()}).catch(function(){ toast("Couldn't update your list &mdash; try again."); });
+    }
+    // optimistic local update; onSnapshot will reconcile
+    state.favorites[id] = !isFav;
+  }else{
+    state.favorites[id] = !isFav;
+    saveLocalFavorites();
+  }
+  renderFavCount();
+  renderGrid();
+  if(!isFav) toast("Added to My List"); else toast("Removed from My List");
+}
+
+function renderFavCount(){
+  var n = Object.keys(state.favorites).filter(function(k){return state.favorites[k];}).length;
+  document.getElementById("favCount").textContent = n;
+}
+
+/* ---------- local pending submissions fallback ---------- */
+function loadLocalPending(){
+  try{
+    var raw = localStorage.getItem("psl-health-pending");
+    var arr = raw ? JSON.parse(raw) : [];
+    arr.forEach(function(p){ mergeProvider(p); });
+  }catch(e){}
+}
+function saveLocalPending(p){
+  try{
+    var raw = localStorage.getItem("psl-health-pending");
+    var arr = raw ? JSON.parse(raw) : [];
+    arr.push(p);
+    localStorage.setItem("psl-health-pending", JSON.stringify(arr));
+  }catch(e){}
+}
+
+function mergeProvider(p){
+  var idx = state.providers.findIndex(function(x){return x.id===p.id;});
+  if(idx>=0) state.providers[idx] = p; else state.providers.push(p);
+}
+
+/* ---------- capability bootstrap ---------- */
+function setSyncPill(mode){
+  var pill = document.getElementById("syncPill");
+  var label = document.getElementById("syncLabel");
+  pill.className = "pill " + mode;
+  if(mode==="live"){ label.textContent = "Live · shared directory"; }
+  else if(mode==="local"){ label.textContent = "Local demo only"; }
+  else { label.textContent = "Connecting…"; }
+}
+
+async function boot(){
+  loadLocalFavorites();
+  renderFavCount();
+  renderCategoryRail();
+  renderGrid();
+  updateStats();
+
+  if(!window.claude || !window.claude.use){
+    setSyncPill("local");
+    loadLocalPending();
+    renderGrid();
+    return;
+  }
+  try{
+    userNs = await window.claude.use("user");
+    db = await window.claude.use("db");
+    if(!db){
+      setSyncPill("local");
+      loadLocalPending();
+      renderGrid();
+      return;
+    }
+    setSyncPill("live");
+    state.localOnly = false;
+
+    db.collection("providers").onSnapshot(function(docs){
+      if(docs && docs.length){
+        docs.forEach(function(d){
+          var data = d.data ? d.data() : d;
+          if(data && data.id) mergeProvider(data);
+        });
+        renderGrid();
+        updateStats();
+      }
+    }, function(){ /* ignore snapshot errors, seed data remains visible */ });
+
+    if(userNs){
+      viewerId = await userNs.id();
+      if(viewerId){
+        db.collection("data/users/"+viewerId+"/favorites").onSnapshot(function(docs){
+          var favs = {};
+          (docs||[]).forEach(function(d){ favs[d.id] = true; });
+          state.favorites = favs;
+          renderFavCount();
+          renderGrid();
+        }, function(){});
+      }
+    }
+  }catch(e){
+    setSyncPill("local");
+    loadLocalPending();
+    renderGrid();
+  }
+}
+
+/* ---------- rendering: category rail ---------- */
+function renderCategoryRail(){
+  var rail = document.getElementById("categoryRail");
+  var counts = {};
+  state.providers.forEach(function(p){ counts[p.category] = (counts[p.category]||0)+1; });
+  var html = '<div class="chip'+(state.activeCategory==="all"?" active":"")+'" data-cat="all" style="--cat-color:#0e7c7a"><span class="ic" style="background:#0e7c7a"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>All specialties <span class="n">'+state.providers.length+'</span></div>';
+  CATEGORIES.forEach(function(c){
+    var m = catMeta(c.key);
+    html += '<div class="chip'+(state.activeCategory===c.key?" active":"")+'" data-cat="'+c.key+'" style="--cat-color:'+m.color+'"><span class="ic" style="background:'+m.color+'"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+m.icon+'</svg></span>'+c.label+' <span class="n">'+(counts[c.key]||0)+'</span></div>';
+  });
+  rail.innerHTML = html;
+  Array.prototype.forEach.call(rail.querySelectorAll(".chip"), function(el){
+    el.addEventListener("click", function(){
+      state.activeCategory = el.getAttribute("data-cat");
+      renderCategoryRail();
+      renderGrid();
+    });
+  });
+}
+
+/* ---------- rating helpers ---------- */
+function starString(val){
+  var full = Math.round(val);
+  var s = "";
+  for(var i=0;i<5;i++){ s += i<full ? "★" : "☆"; }
+  return s;
+}
+function ratingSourceBadge(p){
+  if(!p.rating) return '<span class="src-badge none">Not yet rated</span>';
+  if(p.ratingSource === "Google") return '<span class="src-badge google">Google-rated</span>';
+  return '<span class="src-badge other">Rated on '+esc(p.ratingSource||"a third-party site")+'</span>';
+}
+function esc(s){
+  if(s==null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function initials(name){
+  var clean = name.replace(/\(.*?\)/g,"").trim();
+  var parts = clean.split(/\s+/).filter(function(w){ return w && !/^(Dr\.?|MD|DO|DDS|DMD|PA|ARNP|PMHNP|LCSW|LMHC|MS|QS|MCAP|FACS|FACOG|FAAP|DFAPA)\.?,?$/.test(w.replace(/,/,"")); });
+  var letters = parts.slice(0,2).map(function(w){ return w[0]; }).join("");
+  return (letters || clean[0] || "?").toUpperCase();
+}
+
+/* ---------- filtering / sorting ---------- */
+function visibleProviders(){
+  var list = state.providers.slice();
+  if(state.activeCategory !== "all") list = list.filter(function(p){ return p.category===state.activeCategory; });
+  if(state.googleOnly) list = list.filter(function(p){ return p.ratingSource === "Google"; });
+  if(state.minRating>0) list = list.filter(function(p){ return p.rating && p.rating.value >= state.minRating; });
+  if(state.search.trim()){
+    var q = state.search.trim().toLowerCase();
+    list = list.filter(function(p){
+      return (p.name||"").toLowerCase().indexOf(q)>-1 ||
+             (p.specialty||"").toLowerCase().indexOf(q)>-1 ||
+             (p.address||"").toLowerCase().indexOf(q)>-1 ||
+             (p.zip||"").indexOf(q)>-1 ||
+             (p.desc||"").toLowerCase().indexOf(q)>-1;
+    });
+  }
+  if(state.sort==="rating"){
+    list.sort(function(a,b){ return (b.rating?b.rating.value:-1) - (a.rating?a.rating.value:-1); });
+  }else if(state.sort==="reviews"){
+    list.sort(function(a,b){ return (b.rating&&b.rating.count||0) - (a.rating&&a.rating.count||0); });
+  }else if(state.sort==="name"){
+    list.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  }else{
+    list.sort(function(a,b){ return a.category===b.category ? a.rank-b.rank : CATEGORIES.findIndex(function(c){return c.key===a.category;}) - CATEGORIES.findIndex(function(c){return c.key===b.category;}); });
+  }
+  return list;
+}
+
+/* ---------- grid rendering ---------- */
+function renderGrid(){
+  var grid = document.getElementById("providerGrid");
+  var list = visibleProviders();
+  document.getElementById("resultCount").textContent = list.length + (list.length===1 ? " provider" : " providers");
+  if(!list.length){
+    grid.innerHTML = '<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><div>No providers match these filters.</div></div>';
+    return;
+  }
+  var html = "";
+  list.forEach(function(p){
+    var m = catMeta(p.category);
+    var isFav = !!state.favorites[p.id];
+    var isCmp = !!state.compare[p.id];
+    html += '<article class="card" data-id="'+p.id+'" style="--cat-color:'+m.color+'">';
+    html += '<div class="card-top"><div class="avatar" style="background:'+m.color+'">'+esc(initials(p.name))+'</div>';
+    html += '<div class="card-head"><div class="name">'+esc(p.name)+'</div>';
+    html += '<div class="spec-row"><span class="spec-tag">'+esc(p.specialty)+'</span><span class="rank-badge">#'+p.rank+' of '+p.groupSize+'</span></div></div>';
+    html += '<button class="fav-btn'+(isFav?' active':'')+'" data-fav="'+p.id+'" aria-label="Toggle favorite"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.8z"/></svg></button>';
+    html += '</div>';
+    if(p.pending) html += '<span class="pending-badge">Community submission &middot; unverified</span>';
+    html += '<div class="rating-line">';
+    if(p.rating){ html += '<span class="stars">'+starString(p.rating.value)+'</span><span class="mono" style="font-size:12.5px">'+p.rating.value.toFixed(2)+'</span>'; if(p.rating.count) html += '<span class="rating-count">('+p.rating.count+')</span>'; }
+    else { html += '<span class="rating-count">No public rating found</span>'; }
+    html += '</div>';
+    html += '<div>'+ratingSourceBadge(p)+'</div>';
+    html += '<div class="card-desc">'+esc(p.desc||"")+'</div>';
+    html += '<div class="card-addr"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 1114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>'+esc(p.address||"Service area: Port St. Lucie, FL")+'</span></div>';
+    html += '<div class="card-actions">';
+    if(p.phone) html += '<a class="btn" href="tel:'+esc(p.phone.replace(/[^0-9+]/g,""))+'" onclick="event.stopPropagation()">Call</a>';
+    else if(p.website) html += '<a class="btn" href="'+esc(p.website)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">Website</a>';
+    else html += '<span class="btn" style="opacity:.55;cursor:default">No contact on file</span>';
+    html += '<label class="compare-check" onclick="event.stopPropagation()"><input type="checkbox" data-compare="'+p.id+'" '+(isCmp?'checked':'')+'> Compare</label>';
+    html += '</div></article>';
+  });
+  grid.innerHTML = html;
+
+  Array.prototype.forEach.call(grid.querySelectorAll(".card"), function(el){
+    el.addEventListener("click", function(ev){
+      if(ev.target.closest('[data-fav]') || ev.target.closest('[data-compare]')) return;
+      openDetail(el.getAttribute("data-id"));
+    });
+  });
+  Array.prototype.forEach.call(grid.querySelectorAll("[data-fav]"), function(el){
+    el.addEventListener("click", function(ev){ ev.stopPropagation(); toggleFavorite(el.getAttribute("data-fav")); });
+  });
+  Array.prototype.forEach.call(grid.querySelectorAll("[data-compare]"), function(el){
+    el.addEventListener("change", function(){
+      var id = el.getAttribute("data-compare");
+      if(el.checked){
+        if(Object.keys(state.compare).length>=3){ el.checked=false; toast("You can compare up to 3 providers at a time."); return; }
+        state.compare[id]=true;
+      } else { delete state.compare[id]; }
+      renderCompareBar();
+    });
+  });
+}
+
+function updateStats(){
+  document.getElementById("statTotal").textContent = state.providers.length;
+  document.getElementById("totalInline").textContent = state.providers.length;
+  document.getElementById("statGoogle").textContent = state.providers.filter(function(p){return p.ratingSource==="Google";}).length;
+  document.getElementById("statOther").textContent = state.providers.filter(function(p){return p.rating && p.ratingSource!=="Google";}).length;
+}
+
+/* ---------- detail modal ---------- */
+function openDetail(id){
+  var p = state.providers.find(function(x){return x.id===id;});
+  if(!p) return;
+  var m = catMeta(p.category);
+  var isFav = !!state.favorites[id];
+  var html = '<div class="modal">';
+  html += '<button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+  html += '<div class="modal-top"><div class="avatar" style="background:'+m.color+';width:52px;height:52px;font-size:18px;">'+esc(initials(p.name))+'</div><div>';
+  html += '<h3>'+esc(p.name)+'</h3><div class="spec-row"><span class="spec-tag">'+esc(p.specialty)+'</span><span class="rank-badge">#'+p.rank+' of '+p.groupSize+'</span></div>';
+  html += '</div></div>';
+  if(p.pending) html += '<span class="pending-badge" style="margin-top:10px">Community submission &middot; unverified</span>';
+  html += '<div class="rating-line" style="margin-top:14px">';
+  if(p.rating){ html += '<span class="stars">'+starString(p.rating.value)+'</span><span class="mono">'+p.rating.value.toFixed(2)+'</span>'; if(p.rating.count) html += '<span class="rating-count">('+p.rating.count+' reviews)</span>'; }
+  else html += '<span class="rating-count">No public rating found</span>';
+  html += '</div><div style="margin-top:6px">'+ratingSourceBadge(p)+'</div>';
+  if(p.note) html += '<div class="note-box"><b>Sourcing note:</b> '+esc(p.note)+'</div>';
+  html += '<p style="font-size:13.5px;line-height:1.6;color:var(--ink);margin-top:14px">'+esc(p.desc||"")+'</p>';
+  html += '<div class="kv-grid">';
+  html += '<div class="kv"><div class="k">Phone</div><div class="v">'+(p.phone?esc(p.phone):'Not listed')+'</div></div>';
+  html += '<div class="kv"><div class="k">Website</div><div class="v">'+(p.website?('<a href="'+esc(p.website)+'" target="_blank" rel="noopener">Visit site</a>'):'Not listed')+'</div></div>';
+  html += '<div class="kv"><div class="k">Address / service area</div><div class="v">'+esc(p.address||"Port St. Lucie, FL")+'</div></div>';
+  html += '<div class="kv"><div class="k">Rating source</div><div class="v">'+esc(p.ratingSource||"None found")+'</div></div>';
+  if(p.hospital) html += '<div class="kv" style="grid-column:1/-1"><div class="k">Hospital affiliation</div><div class="v">'+esc(p.hospital)+'</div></div>';
+  html += '</div>';
+  if(p.sources && p.sources.length){
+    html += '<div style="margin-top:14px"><div class="k" style="font-size:10.5px;text-transform:uppercase;letter-spacing:.3px;color:var(--ink-soft);font-weight:700">Sources</div><div class="src-list">';
+    p.sources.forEach(function(s){ html += '<a class="src-chip" href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.type)+'</a>'; });
+    html += '</div></div>';
+  }
+  html += '<div class="modal-actions">';
+  if(p.phone) html += '<a class="btn btn-primary" href="tel:'+esc(p.phone.replace(/[^0-9+]/g,""))+'">Call</a>';
+  if(p.website) html += '<a class="btn" href="'+esc(p.website)+'" target="_blank" rel="noopener">Visit website</a>';
+  html += '<button class="btn'+(isFav?' btn-primary':'')+'" id="modalFavBtn">'+(isFav?'Remove from My List':'Save to My List')+'</button>';
+  html += '</div></div>';
+  var overlay = document.getElementById("detailOverlay");
+  overlay.innerHTML = html;
+  overlay.hidden = false;
+  overlay.querySelector("[data-close]").addEventListener("click", function(){ overlay.hidden=true; });
+  overlay.addEventListener("click", function(ev){ if(ev.target===overlay) overlay.hidden=true; });
+  document.getElementById("modalFavBtn").addEventListener("click", function(){ toggleFavorite(id); overlay.hidden=true; });
+}
+
+/* ---------- compare ---------- */
+function renderCompareBar(){
+  var ids = Object.keys(state.compare);
+  var bar = document.getElementById("compareBar");
+  if(!ids.length){ bar.hidden = true; return; }
+  bar.hidden = false;
+  document.getElementById("compareCount").textContent = ids.length;
+}
+function openCompare(){
+  var ids = Object.keys(state.compare);
+  var items = ids.map(function(id){ return state.providers.find(function(p){return p.id===id;}); }).filter(Boolean);
+  if(!items.length) return;
+  var html = '<div class="modal wide">';
+  html += '<button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+  html += '<h3>Compare providers</h3><div class="compare-scroll"><table class="compare-table"><tr><th>Field</th>';
+  items.forEach(function(p){ html += '<th>'+esc(p.name)+'</th>'; });
+  html += '</tr>';
+  function row(label, fn){
+    html += '<tr><th>'+label+'</th>';
+    items.forEach(function(p){ html += '<td>'+fn(p)+'</td>'; });
+    html += '</tr>';
+  }
+  row("Specialty", function(p){ return esc(p.specialty); });
+  row("Directory rank", function(p){ return '#'+p.rank+' of '+p.groupSize; });
+  row("Rating", function(p){ return p.rating ? (p.rating.value.toFixed(2)+(p.rating.count?(' ('+p.rating.count+')'):'')+' &mdash; '+esc(p.ratingSource)) : 'Not yet rated'; });
+  row("Hospital", function(p){ return p.hospital ? esc(p.hospital) : '&mdash;'; });
+  row("Note", function(p){ return p.note ? esc(p.note) : '&mdash;'; });
+  row("Phone", function(p){ return p.phone ? esc(p.phone) : 'Not listed'; });
+  row("Address / area", function(p){ return esc(p.address||'Port St. Lucie, FL'); });
+  row("Sources", function(p){ return (p.sources||[]).length+' cited'; });
+  html += '</table></div></div>';
+  var overlay = document.getElementById("compareOverlay");
+  overlay.innerHTML = html;
+  overlay.hidden = false;
+  overlay.querySelector("[data-close]").addEventListener("click", function(){ overlay.hidden=true; });
+  overlay.addEventListener("click", function(ev){ if(ev.target===overlay) overlay.hidden=true; });
+}
+
+/* ---------- suggest a provider ---------- */
+function openSuggest(){
+  var html = '<div class="modal">';
+  html += '<button class="modal-close" data-close><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+  html += '<h3>Suggest a provider</h3>';
+  html += '<form id="suggestForm">';
+  html += '<div class="form-field"><label for="sg-name">Provider or practice name *</label><input id="sg-name" required></div>';
+  html += '<div class="form-field"><label for="sg-spec">Specialty *</label><select id="sg-spec" required>';
+  CATEGORIES.forEach(function(c){ html += '<option value="'+c.key+'">'+c.label+'</option>'; });
+  html += '</select></div>';
+  html += '<div class="form-field"><label for="sg-phone">Phone</label><input id="sg-phone" type="tel"></div>';
+  html += '<div class="form-field"><label for="sg-website">Website</label><input id="sg-website" type="url" placeholder="https://"></div>';
+  html += '<div class="form-field"><label for="sg-address">Address or service area</label><input id="sg-address"></div>';
+  html += '<div class="form-field"><label for="sg-note">Why are you recommending them?</label><textarea id="sg-note"></textarea></div>';
+  html += '<div class="form-hint">Community submissions are unverified. They are added to the directory clearly marked as an unverified suggestion until independently checked &mdash; this is not a confirmation of credentials, licensing, or quality of care.</div>';
+  html += '<div class="modal-actions"><button type="submit" class="btn btn-primary">Submit suggestion</button></div>';
+  html += '</form></div>';
+  var overlay = document.getElementById("suggestOverlay");
+  overlay.innerHTML = html;
+  overlay.hidden = false;
+  overlay.querySelector("[data-close]").addEventListener("click", function(){ overlay.hidden=true; });
+  overlay.addEventListener("click", function(ev){ if(ev.target===overlay) overlay.hidden=true; });
+  document.getElementById("suggestForm").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var cat = document.getElementById("sg-spec").value;
+    var group = state.providers.filter(function(p){return p.category===cat;});
+    var p = {
+      id: "sub-"+Date.now().toString(36),
+      category: cat,
+      specialty: catLabel(cat),
+      rank: group.length+1,
+      groupSize: group.length+1,
+      name: document.getElementById("sg-name").value.trim(),
+      phone: document.getElementById("sg-phone").value.trim() || null,
+      website: document.getElementById("sg-website").value.trim() || null,
+      address: document.getElementById("sg-address").value.trim() || null,
+      zip: null, hospital: null, rating: null, ratingSource: null, sources: [],
+      note: document.getElementById("sg-note").value.trim() || null,
+      desc: "Community-suggested provider. Not yet independently verified.",
+      pending: true
+    };
+    mergeProvider(p);
+    if(db){
+      db.collection("providers").doc(p.id).set(p).catch(function(){ saveLocalPending(p); });
+    } else {
+      saveLocalPending(p);
+    }
+    renderCategoryRail();
+    renderGrid();
+    updateStats();
+    overlay.hidden = true;
+    toast("Thanks! Your suggestion was added as an unverified submission.");
+  });
+}
+
+/* ---------- zip coverage ---------- */
+function checkZip(){
+  var zip = document.getElementById("zipInput").value.trim();
+  var out = document.getElementById("zipResult");
+  if(!/^\d{5}$/.test(zip)){ out.innerHTML = "Enter a 5-digit ZIP code."; return; }
+  var matches = state.providers.filter(function(p){ return p.zip === zip; });
+  if(matches.length){
+    var cats = {};
+    matches.forEach(function(p){ cats[p.specialty]=true; });
+    out.innerHTML = "<strong>"+matches.length+" provider"+(matches.length===1?"":"s")+"</strong> listed directly in "+esc(zip)+" across "+Object.keys(cats).length+" specialt"+(Object.keys(cats).length===1?"y":"ies")+".";
+  } else {
+    out.innerHTML = "No providers with a confirmed address in "+esc(zip)+" yet &mdash; browse by specialty below; many listings serve the wider Port St. Lucie / Treasure Coast area.";
+  }
+}
+
+/* ---------- wire up static controls ---------- */
+function initControls(){
+  document.getElementById("searchInput").addEventListener("input", function(e){ state.search = e.target.value; renderGrid(); });
+  document.getElementById("minRatingSelect").addEventListener("change", function(e){ state.minRating = parseFloat(e.target.value); renderGrid(); });
+  document.getElementById("sortSelect").addEventListener("change", function(e){ state.sort = e.target.value; renderGrid(); });
+  var gt = document.getElementById("googleToggle");
+  gt.addEventListener("click", function(){
+    state.googleOnly = !state.googleOnly;
+    gt.classList.toggle("on", state.googleOnly);
+    renderGrid();
+  });
+  document.getElementById("zipBtn").addEventListener("click", checkZip);
+  document.getElementById("zipInput").addEventListener("keydown", function(e){ if(e.key==="Enter") checkZip(); });
+  document.getElementById("favBtn").addEventListener("click", function(){
+    state.activeCategory = "all";
+    state.search = "__FAVORITES__";
+    var realList = state.providers.filter(function(p){ return state.favorites[p.id]; });
+    var grid = document.getElementById("providerGrid");
+    if(!realList.length){ toast("Your list is empty &mdash; tap the heart on any provider to save it."); state.search=""; document.getElementById("searchInput").value=""; renderGrid(); return; }
+    document.getElementById("searchInput").value = "";
+    renderFavoritesOnly(realList);
+  });
+  document.getElementById("suggestBtn").addEventListener("click", openSuggest);
+  document.getElementById("compareClear").addEventListener("click", function(){ state.compare = {}; renderCompareBar(); renderGrid(); });
+  document.getElementById("compareOpen").addEventListener("click", openCompare);
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      ["detailOverlay","compareOverlay","suggestOverlay"].forEach(function(id){ document.getElementById(id).hidden = true; });
+    }
+  });
+}
+
+function renderFavoritesOnly(list){
+  var grid = document.getElementById("providerGrid");
+  document.getElementById("resultCount").textContent = list.length + " on My List";
+  if(!list.length){ grid.innerHTML = '<div class="empty-state">Your list is empty.</div>'; return; }
+  var originalVisible = visibleProviders;
+  visibleProviders = function(){ return list; };
+  renderGrid();
+  visibleProviders = originalVisible;
+}
+
+initControls();
+boot();
+})();
